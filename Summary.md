@@ -230,7 +230,24 @@ const [listOfResturant, useListOfResturant] = arr. //array Structure
 - The Moments you call useListOfResturant, you are updating the listOfResturant(State ) , React Re-render (Refresh page )
 #### when you call useListOfResturant to update 
  const listOfResturant  , React  changes to `new variable listOfResturant` as `undefined`  &  update value useListOfResturant(listOfResturantUpdated)
+## Q: Rule for HOOKS ?
+- Hooks can only be called inside React function components(1)
+- Hooks can only be called at the top level of a component(2)
+- Hooks cannot be conditional(3)
+```
+const [listOfResturant, useListOfResturant] = useState([]); // (1) Not allowed before function Body
+const Body= () => {
+    
+    const [listOfResturant, useListOfResturant] = useState([]); // (2) allowed 
 
+if(Condition ){
+    const [listOfResturant, useListOfResturant] = useState([]);  //(3) not allowed
+}
+    return (
+        <div> THIS is HOOK</div>
+    )
+}
+```
 ## Q. What is Virtual DOM & Reconciallation or React Fibre (after REACT16)
 - Virtual DOM: is replica of DOM
 - its an ReactElement or
