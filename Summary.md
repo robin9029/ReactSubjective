@@ -172,17 +172,113 @@ const RestaurantCard = () => {
 - Restaurent - provide VEG,Non-VEG
 - UI Layer, Data Layer  `what data is coming based on that we build UI' - This is called Config Driven UI
  
-3)props:are argument to function 
-Props is properties 
-Props are javascript Object 
+## Q:props ?
+- are argument to function 
+- Props is properties 
+- Props are javascript Object 
 
-4)what happens if you don’t provide key to map/LOOP/ListItem what happens ?  If new element/restaurant card came react re-render all 
-if you give Unique key , reacts knows what keys new element comes and only re render only new one - improves performance 
-It uniquely identifies	new element 
-
+## Q: what happens if you don’t provide key to map/LOOP/ListItem what happens ?
+- If new element/restaurant card came react re-render all 
+- if you give Unique key , reacts knows what keys new element comes and only re render only new one - improves performance 
+- REACT uniquely identifies new element 
+```
 <div className="res-container">
        {resList.map(restaurant =>(<RestaurantCard key ={restaurant.data.id} resData ={restaurant}/> ))}
       </div>
-Its ok to use Index but its not recommended 
+```
+- Its ok to use Index but its not recommended 
+```
 {resList.map((restaurant, index) =>(<RestaurantCard key ={index} resData ={restaurant}/> ))}
+```
 
+# EP5 hook, file structure, Import/export 
+
+## Q. When data changes my UI layer not changed why ? DOM manipulation not happening 
+- Updating DOM or DOM manipulation or changes in Data my UI also changes , efficient DOM manipulation 
+- As soon as my state Variable  of data changes using SetState my UI  - react will re-render the Components
+Means you changed the data - `it refresh page - re-render` (refresh page again )
+- Render: calling module/component 
+- Whenever state variable changes - React triggers reconciliation process and re-render 
+
+## Q. Hooks ?
+- it is normal javascript function with inbuilt utility features provided by React
+- It keeps your data Layer and UI layer in synch
+- JS Utility function 
+
+- Eg. `USESTATE`: it is used to create localSTATE inside your Function 
+
+```
+const [listOfResturant] = useState([]). Define variable it return array 
+const [listOfResturant, useListOfResturant] = useState(data) 
+```
+
+- Or 
+```
+Const are =useState(data). //it return array 
+const [listOfResturant, useListOfResturant] = arr. //array Structure 
+```
+- example filtering based on rating 
+```
+<button
+          className="filter-btn"
+          onClick={() => {  
+            const listOfResturantUpdated= listOfResturant.filter(res=> res.data.avgRating>4)
+            useListOfResturant(listOfResturantUpdated)}>
+          Top Rated Resturant
+        </button>
+```
+- The Moments you call useListOfResturant, you are updating the listOfResturant(State ) , React Re-render (Refresh page )
+#### when you call useListOfResturant to update 
+ const listOfResturant  , React  changes to `new variable listOfResturant` as `undefined`  &  update value useListOfResturant(listOfResturantUpdated)
+
+## Q. What is Virtual DOM & Reconciallation or React Fibre (after REACT16)
+- Virtual DOM: is replica of DOM
+- its an ReactElement or
+- its `Javascript representation of HTML` as  `Object` or OBJECT representation oF UI 
+- Eg nested DIV 
+
+## Q: Reconciallation Algo/ Process ? 
+- Suppose starting we have 7-RestaurantCard, same in Virtual DOM
+- Now once you filter based on rating>4  we have 4-RestaurantCard
+- Algo compares `Previous_Virtual_DOM`(Previous_OBJECT) & `current_Virtual_DOM`(Current_OBJECT) 
+- If finds changes then update DOM 
+- Actually React doesn’t work on Html - DIV its finds better way like `Javascript Object` and see the changes in Object which makes 
+Manipulation fast 
+- It does not touches DOM
+
+## Q: Why react is FAST ?
+- Efficient DOM manipulation ,it is Virtual DOM, `it can find out the DIV and updates`
+- ACDlite GitHub react Fiber  : https://github.com/acdlite/react-fiber-architecture
+
+
+# EP6 -API call,UseEffect
+## Q. monolithic vs microservices 
+microservices
+	Single responsibility principle 
+	Seperation of concern 
+
+## Q. API calls
+- 1st Approach `Load->API call(wait till receive data) -> render`
+- 2nd Load->Render(Skeleton ) -> API call -> Re-render(with data)
+
+##### React approach - because it will give better user experience : 2 render is ok since render mechanism is fast 
+
+## Q: what is shemer uI- till the data fetch you show fake cards
+## Q: fetch api - browser api 
+```
+fetch('url') // api for the get request
+    .then(response => response.json())
+    .then(data => console.log(data));
+```
+OR
+```
+ async function getRestaurant to fetch Swiggy API data
+  async function getRestaurants() {
+    const data = await fetch(
+      "Swiggy_API_URL"
+    );
+    const json = await data.json();
+    // we get the Swiggy API data in json format
+    console.log(json);
+  }
+ ```
