@@ -217,7 +217,12 @@ const [listOfResturant, useListOfResturant] = useState(data)
 Const are =useState(data). //it return array 
 const [listOfResturant, useListOfResturant] = arr. //array Structure 
 ```
-- example filtering based on rating 
+- example filtering based on rating
+- Before
+  ![Screenshot 2025-02-07 at 2 49 07 PM1](https://github.com/user-attachments/assets/e96c0778-0378-4603-88e9-2facb577d4c8)
+- AFTER filtering from 3 to 2
+- ![Screenshot 2025-02-07 at 2 49 15 PM2](https://github.com/user-attachments/assets/4269489a-abe0-4718-996f-4658f9e4de1e)
+
 ```
 <button
           className="filter-btn"
@@ -262,6 +267,8 @@ if(Condition ){
 - Actually React doesn’t work on Html - DIV its finds better way like `Javascript Object` and see the changes in Object which makes 
 Manipulation fast 
 - It does not touches DOM
+- ![Screenshot 2025-02-07 at 2 47 35 PM2](https://github.com/user-attachments/assets/d178bd53-6087-40e7-a226-2a719604d505)
+
 
 ## Q: Why react is FAST ?
 - Efficient DOM manipulation ,it is Virtual DOM, `it can find out the DIV and updates`
