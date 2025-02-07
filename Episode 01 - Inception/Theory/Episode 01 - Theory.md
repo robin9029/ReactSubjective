@@ -11,6 +11,11 @@ A: `Emmet` is the essential toolkit for web-developers. It allows you to `type s
 A: A `content delivery network (CDN)` refers to a geographically distributed group of servers that work together to provide fast delivery of Internet content.
 The goal is to provide high availability and performance by distributing the service spatially relative to end users.
 
+```
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+```
+
 ## Q: Why is `React known as React`?
 
 A: And it's called `React` because it `reacts`. It was developed by Facebook (a site that CONSTANTLY updates their data) to improve the user interface development and more effectively change (REACT to) what the user sees when they're doing things like mouse clicking, submitting and typing.
