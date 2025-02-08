@@ -37,6 +37,12 @@ class UserClass extends React.Component {
 
   componentWillUnmount() {
     console.log('Component Will Unmount');
+      if (prevState.count1 !== this.state.count1) {
+        // Means your count1 got changed do the operation 
+    }
+    if (prevState.count2 !== this.state.count2) {
+        // Means your count2 got changed do the operation 
+    }
   }
 
   render() {
