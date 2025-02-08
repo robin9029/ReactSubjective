@@ -359,3 +359,34 @@ resId=251194
 
 - When you make a link <HOME>- React router Dom keeps a track of <HOME> with anchor tag and don’t refresh it 
 & Doesn’t refresh 
+## Q: routing with example 
+
+```
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+const App = () => {
+
+  return (
+    <div className="app">
+      <Header />
+      <Outlet />                          // will be filled with children routes
+    </div>
+  )};
+
+const appRouter = createBrowserRouter([    //create Router config 
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "/", element: <Body /> },
+      { path: "/about", element: <About /> },
+      { path: "/contact", element: <Contact /> },
+      {path:"/resturants/:resId", element: <ResturantMenu/>}
+    ],
+    errorElement: <Error />,
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={appRouter} />);  //provide Router config 
+```
