@@ -306,3 +306,56 @@ OR
     console.log(json);
   }
  ```
+## Q:  useEffect ? - it will be called always in 1st Render 
+- It  calls on every component renders
+- If dependency array [EMPTY] called once- render only once
+- If dependency array [DATA] called once when dependency is changes
+
+# EP7
+## Q: Routing ? createBrowserRouter, routerProvider, Outlet
+- createBrowserRouter: List of configuration path, what happens when we click on the path
+- routerProvider: is a component and will provide the app router configuration
+- Outlet: will be filled with children routes adding ‘/’ main page + Body or according to Routes
+- Link:
+```
+  import { Link } from "react-router-dom";
+	  <Link to="/about" key={key}> About us </Link>
+```
+- useRouteError: is utility JS function which return Object with details about status
+
+```
+import { useRouteError } from "react-router-dom";
+	 const errorMsg= useRouteError();
+	h3> {errorMsg.status}: {errorMsg.statusText}</h3>
+```
+## Q: useParam will provide the resID from URL
+- Routing
+  ```
+  {path:"/resturants/:resId", element: <ResturantMenu/>}
+  ```
+- Main component 
+``` 
+import { useParams } from "react-router-dom";
+const ResturantMenu = () => {
+  const [resInfo, setResInfo] = useState(null);
+  const {resId} =useParams()
+   const fetchMenu = async () => {
+    const data = await fetch('URL'+resId);
+    const json = await data.json();
+    setResInfo(json.data);
+  };
+```  
+- when called from : 
+```
+http://localhost:1234/resturants/251194
+const {resId} =useParams()
+resId=251194
+```  
+ ## Q: can we use <a href='/'> </a> in place of Link and what is Link ?
+- never use <a> tag for navigating 
+- Not to use since it reload the page which is not required in Place use Link component works similarly as <a>
+- Link is a `wrapper over anchor tag`
+ ![Screenshot 2025-02-07 at 1 36 39 2PM](https://github.com/user-attachments/assets/cb3f2e5e-3cdc-4cab-9dd8-a319944d2299)
+
+- When you make a link <HOME>- React router Dom keeps a track of <HOME> with anchor tag and don’t refresh it 
+& Doesn’t refresh 
