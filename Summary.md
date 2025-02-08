@@ -390,3 +390,84 @@ const appRouter = createBrowserRouter([    //create Router config
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);  //provide Router config 
 ```
+# EP8 CLASS vs Function 
+## Q.Class Phases 
+So react life cycle Happens in two phase 
+- 1)render phase 
+- UPDATE DOM then 
+- Part B: 2)commit phase
+
+In general term - When `class is called` - it `instantiated` or created new instance 
+`Constructor is called` - Then `render` is called
+`when Dom is on the UI` - Then ComponentDIDmount 
+
+#### Explation here 
+Part A ----- Mounting CYCLE -----
+-  Constructor (dummy)
+-  Render (dummy)
+  ```
+  <HTML Dummy></HTML>
+```
+-     Component Did Mount
+```
+    <API Call>
+    <this.setState> - State variable is updated
+```
+Part B----- UPDATE CYCLE -----
+- render(API data)
+```
+  <HTML (new API data)>
+```
+-  Component Did Update
+-   Component Will Unmount
+![Screenshot 2025-02-07 at 4 05 10A PM](https://github.com/user-attachments/assets/d0cf4dc0-bd6a-43e1-9cc9-8d0808f8471d)
+
+## Q.Component DID mount is used ?
+- used to make an api call , why it is made ? becuase it follows approach
+- Load->Render(Skeleton ) -> API call(ComponentDIDmount) -> Re-render(with API data)
+
+## Q. ComponentDidUpdate when it is called ? - when state changed VS Functional
+```
+this.setState({
+      count1: count1+1,   
+      count2: count2+1,  
+    });
+```
+- count1 and count2 changed
+```
+componentDidUpdate() {
+    console.log('Component Did Update');
+         if (prevState.count1 !== this.state.count1) {
+        // Means your count1 got changed do the operation 
+    }
+    if (prevState.count2 !== this.state.count2) {
+        // Means your count2 got changed do the operation 
+    }}
+```
+- Functional
+```
+  useEffect(
+  ()=>{},
+  [count1,count2])
+```
+## Q. componentWillUnmount when it is called ? changing component VS Functional
+```
+ComponentDidMount(){
+this.timer = setIntervel(()=>{console.log(‘’PRINT HITS’)},1000)
+}
+
+componentWillUnmount(){
+Clear.Interval(this.timer)}
+```
+Eg- once we go away current component to new Component `not page` because its SPA
+- BAD thing ABOUT SPA you dont change the Page:So if some setInterval is coded and when you are changing your component its not reloading your page 
+- it just changing the component and React is reconciling it
+- Functional
+  
+```
+useEffect (()=>{setIntervel(()=>{console.log(‘’PRINT HITS’)},1000)
+ // how to stop this
+Return () => {}  // this is stop when moving from current component
+},[])
+```
+
