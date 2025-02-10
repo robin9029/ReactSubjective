@@ -201,3 +201,34 @@ it('should search ResList for burger text input', async () => {
 });
 );
 ```
+## Q.Enzyme test used shallow & mount
+
+- Shallow rendering externally defined components it will not render external component
+```
+// App.js
+import Bar from './bar'; 
+const Foo = () => <div>Foo!</div>;
+ 
+const App = () => (
+  <div>
+    <Foo />
+    <Bar />
+  </div>
+);
+```
+  
+  ```
+  // App.test.js
+import { shallow } from 'enzyme';
+ 
+const wrapper = shallow(<App />);
+console.log(wrapper.debug());
+  ```
+```
+<div foo="bar">
+  <div>Hello world</div>
+</div>
+
+```
+
+-mount
