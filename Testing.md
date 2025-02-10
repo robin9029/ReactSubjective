@@ -98,7 +98,7 @@ global.fetch = jest.fn(() => {
     },
   });});
 ```
-- When you are updating your state wrap it to GET()
+- When you are updating your state wrap it to act()
 ```
 useListOfResturant(
       json.data.cards.filter((obj) => "info" in obj.card.card)
