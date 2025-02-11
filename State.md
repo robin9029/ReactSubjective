@@ -194,11 +194,9 @@ export const counterSlice = createSlice({name: 'counter',
 - Exact createSlice Object
 ```
 // counterSlice.js
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCount } from './counterAPI';
+import {  createSlice } from '@reduxjs/toolkit';
 const initialState = {
-  value: 0,
-  status: 'idle',
+  value: 0, // this is state 
 };
 
 // Redux Toolkit slice
