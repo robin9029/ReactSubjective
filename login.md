@@ -7,27 +7,29 @@ const bcrypt = require("bcryptjs");
 
 const app = express();
 app.use(express.json());
-
-const users = [{ id: 1, username: "admin", password: bcrypt.hashSync("password", 8), role: "admin" }];
-
 const SECRET_KEY = "your_secret_key";
+
+```
+- this is the kist of available login created
+```
+const users = [{ id: 1, username: "admin", password: bcrypt.hashSync("password", 8), role: "admin" }];
 ```
 
-- Login Route
+
+- Login Route -user login via this API-http://localhost:5000/login
 ```
   app.post("/login", (req, res) => {
   const { username, password } = req.body;
   const user = users.find(u => u.username === username);
-  if (!user || !bcrypt.compareSync(password, user.password)) {
-    return res.status(401).json({ message: "Invalid credentials" });
-  }
-```
-  
--  Generate Token
-```
+  if (!user || !bcrypt.compareSync(password, user.password)) { 
+    return res.status(401).json({ message: "Invalid credentials" });    // if fails return error 
+  }  
+ // Generate Token
+
   const token = jwt.sign({ userId: user.id, role: user.role }, SECRET_KEY, { expiresIn: "1h" });
   res.json({ token });
 });
+
 ```
 - Protected Route
 ```
