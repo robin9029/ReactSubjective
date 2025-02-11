@@ -149,3 +149,103 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(mapStateToProps,mapDispatchToProps)(Counter)
 ```
+
+# 2. ReduxToolKIT
+- https://blog.logrocket.com/smarter-redux-redux-toolkit/
+- Redux store is too `complicated`,`lot of packages required`,`boilerplate code`
+#### 1.Store  
+```
+// store.js
+import { configureStore } from '@reduxjs/toolkit'
+import counterReducer from '../features/counter/counterSlice'
+
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
+  })
+```
+#### 2.APP
+```
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+#### 3.createSlice Object
+- sample
+```
+export const counterSlice = createSlice({name: 'counter',
+					initialState,
+					reducers: {increment: (state) => {state.value += 1;}})
+```
+- Exact createSlice Object
+```
+// counterSlice.js
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { fetchCount } from './counterAPI';
+const initialState = {
+  value: 0,
+  status: 'idle',
+};
+
+// Redux Toolkit slice
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment: (state) => {
+      state.value += 1;
+    },
+    decrement: (state) => {
+      state.value -= 1;
+    },
+    incrementByAmount: (state, action) => {
+      state.value += action.payload;
+    },
+  },
+  
+  },
+});
+export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+
+export default counterSlice.reducer;
+```
+- The counterSlice file uses the createSlice method from RTK. This method returns an object with reducers and actions 
+#### 4.Counter View Layer
+```
+/ Counter.js
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {increment,} from './counterSlice';
+import styles from './Counter.module.css';
+export function Counter() {
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <div className={styles.row}>
+        <button
+          className={styles.button}
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
+        >
+          click for Increment+
+        </button>
+      </div>
+    </div>
+  );
+}
+```
