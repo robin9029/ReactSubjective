@@ -470,4 +470,16 @@ useEffect (()=>{setIntervel(()=>{console.log(‘’PRINT HITS’)},1000)
 Return () => {}  // this is stop when moving from current component
 },[])
 ```
+## Q. In CC can we call setState inside Constructor? and BIND
+- Setstate: cannot be called inside constructor because - when object created Constructor fired automatically 
+- BIND: data is not used outside the constructor so if you want to use it then Bind this parameter inside constructor
+
+## Q. Babel ?
+- Babel: toolchain - ECMA 2015 convert backward compatible version of JS in current or Older version browser 
+Compatibility between different javascript 
+- Transform syntex, polyfil- means if code not available then generate code and make available 
+
+- JSX code to simplify complexity in code - js+ html but React compiler does not understand	JSX 
+- Babel converts JSX to react js compiler compatibility by Transform syntax 
+- Polyfil if code does not able to transform  in that case it takes out compatible code patches and covert eg. map function 
 
