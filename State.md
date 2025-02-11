@@ -154,7 +154,7 @@ export default connect(mapStateToProps,mapDispatchToProps)(Counter)
 - https://blog.logrocket.com/smarter-redux-redux-toolkit/
 - Redux store is too `complicated`,`lot of packages required`,`boilerplate code`
 - createSlice Object has reducer which has all(Action)
-- From <Counter> just useDispatch action,  no mapping requires with state/Dispatch
+- From Counter.js just useDispatch action,  no mapping requires with state/Dispatch
 #### 1.Store  
 ```
 // store.js
