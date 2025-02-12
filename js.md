@@ -260,3 +260,14 @@ greet(); // logs "Hello, stranger!"
 - Hello, Jane!
 - Hello, Bob!
 - Hello, stranger!
+
+### Q.12 Output ?
+```
+let c ={greeting: "Hey!"}
+let d;
+d=c;
+c.greeting ="hello";
+console.log(d.greeting)
+```
+// Pointing to same memory location in SCOPE, VAR also will be same 
+// o/p - hello for both 
