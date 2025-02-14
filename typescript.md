@@ -17,3 +17,25 @@ const strings = getArray<string>(['hello', 'world', 'foo', 'bar']);
 console.log(strings)
 ```
 - > [ 'hello', 'world', 'foo', 'bar' ]
+## Q. difference between Class vs interface
+
+![Screenshot 2025-02-14 at 6 58 36 PM](https://github.com/user-attachments/assets/74f19e66-6971-4bd8-a75f-4ed6b19b6752)
+
+```
+// Interface for Object with extends function 
+interface ForObj { 
+	First: string 
+} 
+
+interface forNewObj extends ForObj { 
+	Second: number 
+} 
+
+let newArray: forNewObj = { 
+	First: "Interface for Object", 
+	Second: 2 
+}; 
+console.log(newArray);
+```
+- > { First: 'Interface for Object', Second: 2 }
+
