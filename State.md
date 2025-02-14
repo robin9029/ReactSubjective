@@ -167,6 +167,8 @@ export const store = configureStore({
   },
   })
 ```
+- counterSlice.reducer used in store
+- for Multiple reducer use Combinereducer
 #### 2.APP
 ```
 // index.js
@@ -249,3 +251,7 @@ export function Counter() {
   );
 }
 ```
+#### ReduxToolKIT simplified 
+- user Clicks on Increment+ step4
+- step4 dispatch increment Action to step2 via Step1 store
+- store has reducer to be updated
