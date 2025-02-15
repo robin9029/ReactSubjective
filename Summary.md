@@ -483,3 +483,189 @@ Compatibility between different javascript
 - Babel converts JSX to react js compiler compatibility by Transform syntax 
 - Polyfil if code does not able to transform  in that case it takes out compatible code patches and covert eg. map function 
 
+# EP-N Hooks: 
+### Q1. useContext ?  many nested components. The component at the top and bottom of the stack need access to the state.
+- It Solve  need to pass the state as "props" through each nested component ` "prop drilling".`
+```
+import { useState, createContext, useContext } from "react";
+const UserContext = createContext();
+
+function Component1() {
+  const [user, setUser] = useState("Jesse Hall");
+
+  return (
+    <UserContext.Provider value={user}>
+      <h1>{`Hello ${user}!`}</h1>
+      <Component2 />
+    </UserContext.Provider>  );
+}
+
+function Component2() {
+  return (
+      <h1>Component 2</h1>
+      <Component3 />  );}
+
+function Component3() {
+  return (
+      <h1>Component 3</h1>
+      <Component4 />);}
+
+function Component4() {
+  return (
+      <h1>Component 4</h1>
+      <Component5 />);}
+
+function Component5() {
+  const user = useContext(UserContext);
+
+  return (
+      <h1>Component 5</h1>
+      <h2>{`Hello ${user} again!`}</h2>);
+}
+```
+
+
+### Q2. useRef : persist values between renders
+- Does Not Cause Re-renders, can be used for storing previous state value 
+- Tracking State Changes
+- Accessing DOM Elements directly - focus
+```
+import React, { useRef, useEffect } from "react";
+
+function MyComponent() {
+  const checkboxRef = useRef(null);
+
+  const handleButtonClick = () => {
+    if (checkboxRef.current) {
+      // Access and modify the DOM directly (less recommended) - TOGGLE
+      checkboxRef.current.checked = !checkboxRef.current.checked;
+
+      // You can also access other properties:
+      console.log("Checked state:",checkboxRef.current.checked,"Checkbox element:",checkboxRef.current
+      );}};
+
+  return (
+    <div>
+      <input type="checkbox" ref={checkboxRef} />
+      <button onClick={handleButtonClick}>Toggle Checkbox</button>
+    </div>
+  );
+}
+
+export default MyComponent;
+
+```
+```
+function App() {
+  const inputElement = useRef();
+
+  const focusInput = () => {
+    inputElement.current.focus();};
+
+  return (
+      <input type="text" ref={inputElement} />
+      <button onClick={focusInput}>Focus Input</button>)}
+```
+
+### Q3.useCallback- eg. dynamic filed addition with other operation 
+-useMemo returns a memoized value and useCallback returns a memoized function.
+```
+import { useState, useCallback } from "react";
+import Todos from "./Todos";
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+
+  const increment = () => {setCount((c) => c + 1);};
+
+  const addTodo = useCallback(() => {
+    setTodos((t) => [...t, "New Todo"]);
+  }, [todos]);
+
+  return (
+    <>
+      <Todos todos={todos} addTodo={addTodo} />
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
+    </>
+  );
+};
+```
+
+```
+//Todo.js
+import { memo } from "react";
+
+const Todos = ({ todos, addTodo }) => {
+  console.log("child render");
+  return (
+    <>
+      <h2>My Todos</h2>
+      {todos.map((todo, index) => {
+        return <p key={index}>{todo}</p>;
+      })}
+      <button onClick={addTodo}>Add Todo</button>
+    </>
+  );
+};
+
+export default memo(Todos)
+```
+### Q4. useMemo
+```
+import { useState, useMemo } from "react";
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const calculation = useMemo(() => expensiveCalculation(count), [count]);
+
+  const increment = () => {    setCount((c) => c + 1);};
+  return (
+    <div>
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+        <h2>Expensive Calculation</h2>
+        {calculation}
+      </div>
+    </div>
+  );
+};
+```
+```
+const expensiveCalculation = (num) => {
+  console.log("Calculating...");
+  for (let i = 0; i < 1000000000; i++) {
+    num += 1;
+  }
+  return num;
+};
+```
+### Q5. customFetch: component logic that needs to be used by multiple components
+```
+import { useState, useEffect } from "react";
+
+const useFetch = (url) => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, [url]);
+
+  return [data];
+};
+
+export default useFetch;
+```
+```
+call in your component
+const Home = () => {
+  const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");}
+```
+```
