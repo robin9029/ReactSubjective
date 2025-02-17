@@ -357,13 +357,15 @@ function getAge (...args){
 
 getAge(21)  
 ```
-- > OBJECT 
+  > OBJECT
+  >  JavaScript, the typeof operator returns a string indicating the type of the operand.
+  > For arrays, typeof will return "object", since arrays are a special kind of object. 
 ```
 function getAge1 (args){
     console.log(typeof args)
 }
 getAge1(21) 
 ```
-- > NUMBER 
+> NUMBER 
 
 
