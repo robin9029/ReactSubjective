@@ -20,14 +20,16 @@
       Disallow: /private/
 
       Sitemap: https://acme.com/sitemap.xml
+
+   - sitemap.xml
+     
 ```
-  - sitemap.xml
-  ```
-export async function generateSitemaps() {
+  export async function generateSitemaps() {
   // Fetch the total number of products and calculate the number of sitemaps needed
   return [{ id: 0 }, { id: 1 }, { id: 2 }, { id: 3 }]
 }
 ```
+
 ```
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -36,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
-    },
+    }
   ```
 
   
