@@ -1,4 +1,4 @@
-### Q.1 Add  or Sub
+Q.1 Add  or Sub
 - console.log("O========Operation ================")
 - console.log("(-) Behaves mathimatic and converts as       2-2= ","2"-"2")
 - console.log("(-) Behaves mathimatic and converts as       A-2= ","A"-2)
@@ -269,5 +269,101 @@ d=c;
 c.greeting ="hello";
 console.log(d.greeting)
 ```
-// Pointing to same memory location in SCOPE, VAR also will be same 
-// o/p - hello for both 
+- >  Pointing to same memory location in SCOPE, VAR also will be same 
+- >  o/p - hello for both
+### Q.13 Output
+```
+const bird = {size: "small"}
+
+const mouse ={
+    name: "Micky",
+    small: true 
+}
+```
+- > //console.log(mouse.bird.size)   // : referenceError: : 
+- > console.log(mouse[bird.size]) `true`
+- > console.log(mouse[bird['size']]) `true`
+### Q.14 Output
+```
+const person ={name: "Lydia"}
+Object.defineProperty(person,"age",{value: 21})
+console.log(person)               //{name:"Lydia",age:21 }
+console.log(Object.keys(person))         //['name']
+```
+### Q.15 Output
+
+```
+const myPromise =() => Promise.resolve("I have resolved ")
+function myFirstFunction(){
+    myPromise().then(res => console.log("res: ",res)) // .then return a callback
+    console.log('second')
+}
+
+// second
+// res:  I have resolved   promise : due to callback
+
+async function  mySecondFunction() {
+    console.log(await myPromise())     //first resolve await and then move next line 
+    console.log('SeconD')
+}
+myFirstFunction()
+mySecondFunction()
+```
+```
+// second
+// res:  I have resolved   
+// I have resolved 
+// SeconD
+```
+### Q.16 Output
+```
+const foo = () => console.log("First")
+const bar = () => setTimeout ( () => console.log("Second"))
+const baz = () => console.log("Third")
+
+bar()
+foo()
+baz() 
+```
+```
+//o/p
+// First 
+// Third 
+// Second : callback 
+```
+### Q.17 Output
+```
+String.prototype.giveLidyaPizza = () => {
+    return "just Given lidya pizza already ";
+}
+
+const name = "Lydia";
+console.log(name.giveLidyaPizza()); // This will print the returned string to the console
+```
+- > just Given lidya pizza already
+
+### Q.18 Output
+```
+/ how log cool_secret accessable ?
+sessionStorage.setItem("cool_secret",123);
+
+// till when the browser closed
+```
+### Q.19 Output
+```
+function getAge (...args){
+    console.log(typeof args)
+}
+
+getAge(21)  
+```
+- > OBJECT 
+```
+function getAge1 (args){
+    console.log(typeof args)
+}
+getAge1(21) 
+```
+- > NUMBER 
+
+
