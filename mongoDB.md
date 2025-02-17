@@ -263,7 +263,6 @@ console.log(user.greet()); // "Hello, my name is Alice"
       },
       message: props => `${props.value} is not a valid age!`
     }}})
-```
 
 - Indexing: Creates an index for faster querying.
 
