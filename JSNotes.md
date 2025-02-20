@@ -76,7 +76,8 @@ Asynchronous Programming exist in JS exist due to CALLBACK
 3)  Promise: is an object representation of Eventual Completion or failure of Async Opeartion
  How to fetch data from backend ? Multiple fetch api: Promise.all() and map()
 Write a promise if number is more than 2 Resolve it else error 
-4) Closure : function with lexical scope , when function return function which can remember	pervious function data/varibale 
+4) Closure : function with lexical scope , when function return function which can remember	pervious function data/varibale
+issue with Closure
 5)This keyword: behaves differently how it is called
 6) Object Assignation Method & why Object.create is preferable & write own polyfil-protoype 
 7)setTimeout + Closures & setInterval & clearInterval(NULL)
