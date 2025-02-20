@@ -66,3 +66,46 @@ Fetching data...
 End
 Data received: { ...API Response... } (after some delay)
 ```
+
+# frequntly asked
+```
+1) SCOPE VAR/LET /CONST 
+	TEMPORAL DEAD ZONE: Time between a(variable) memory allocation( a =undefined)   and a(20)initialised
+2) Callback hell:  Issue with CALLBACK
+Asynchronous Programming exist in JS exist due to CALLBACK
+3)  Promise: is an object representation of Eventual Completion or failure of Async Opeartion
+ How to fetch data from backend ? Multiple fetch api: Promise.all() and map()
+Write a promise if number is more than 2 Resolve it else error 
+4) Closure : function with lexical scope , when function return function which can remember	pervious function data/varibale 
+5)This keyword: behaves differently how it is called
+6) Object Assignation Method & why Object.create is preferable & write own polyfil-protoype 
+7)setTimeout + Closures & setInterval & clearInterval(NULL)
+8) call apply bind [CAB] passing Object to Function  OR Function.OBJECT
+9)Event loop ? call stack/microstack queue /callback Queue ? How to improve queue 
+10)Cookies VS local VS Sesssion 
+11)Event delegation vs enent Propagation and immediate propagation and EventBubbling and eventLooping 
+12 ES6 standard : literal, spread, rest, destructure, arrow function 
+13)Progressive Web App (PWA)/ service worker /Web accessibility /AA,AAA standard/Accessibility 
+14)Intereceptor
+15)What is generator function and why do we use it 
+What will happen if no next is called ? on the iterator object, the generator function will not execute
+16)Deep copy - separate copy 
+const deepCopy = JSON.parse(JSON.stringify(nestedObject));
+17)Event curry ? what is the usage why we use it 
+18)Memory leakage 
+19)declarative and imperative : JS is both 
+20)Difference between MAPOBJECT vs object 
+21)  global key- payment keys/ gateway keys- these are common and can’t be changed 
+			- store in CONST : block
+			- store in VAR: GLOBAL
+What is difference and how this will impact code/speed: VAR,GLOBAL- increase the speed - we can’t	be used for const
+22)for every change in textbook will trigger the Render how to prevent that 
+	Debouncing[Depth-Search] is commonly used for scenarios like search input fields, where you want to wait for the user to finish typing before triggering a search request.
+	Throttling is commonly used for scenarios like handling scroll events, where you want to limit the frequency of function invocations to avoid performance issues.
+	PreventDefault()
+23)OOBJ - Polymorphism, -different form, abstraction:hide ,encapsulation:follow process -Petrol car put petrol ,inheritance- feature parent in child component super
+24)JS security 
+25) Function return vs no return both are same 
+Const fun =() => true 
+Const fun =() => { return true }
+```
