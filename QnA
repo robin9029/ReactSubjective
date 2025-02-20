@@ -2806,7 +2806,7 @@ javascript
 1) SCOPE VAR/LET /CONST 
 	TEMPORAL DEAD ZONE: Time between a(variable) memory allocation( a =undefined)   and a(20)initialised
 2) Callback hell:  Issue with CALLBACK- synchronous (runs immediately num=[1,2,3,] num.map(n=> n*2) )vs asynchronous 
-
+limitation of callback, print 1,2,3 when called same function using callback
 Asynchronous Programming exist in JS exist due to CALLBACK
 3)  Promise: is an object representation of Eventual Completion or failure of Async Opeartion, can handle more effeicntly then call back
  How to fetch data from backend ? Multiple fetch api: Promise.all() and map()
@@ -3090,7 +3090,7 @@ Polyfill of promiseall
 Translator
 
 Extra things 
-Language Translator 
+Language Translator i18n
 Charting library 
 Classs based 
 JWT bearer token 
@@ -3098,3 +3098,37 @@ Hooks implementation
 Error Boundary 
 Q14 What are refs in React?
 Q15 forwardRefs in React?
+
+Seaason 2
+Tech Mahindra 
+Q. Output 
+// console.log(count())
+// console.log(count())
+ 
+// console.log(count())
+ 
+// output
+// 1
+// 2
+// 3
+- Closure Using calling 3 times 
+
+Q. Authorisation and authentication 
+Q. CSS 
+Sudo class
+Css specificity - id , class, inline,css 
+Blind css 
+ Q. Js 
+Callback limitation - memory issue, debugging , unnecessary loop 
+Event delegation - 
+Promise vs Async and await 
+Q. React js 
+How data can be passed from child to parent - callback or Redux 
+Q. Next js - server side rendering 
+Q. Figma, Webpack 
+Q. How you fetch the continuous data from backed from UI eg. score Live - setInterval is not good approach 
+
+DEBasis Node js  
+Q nodejs  - how to send html 
+Q. create server 
+
