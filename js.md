@@ -377,10 +377,8 @@ for (const char of message) {
 
 foreach:    no break in loop, used for side effect, works on array
 Map:  no break in loop, used for side effect, works on array,  new arrary creation 
+```
 
-![Screenshot 2025-02-21 at 10 51 11 AM](https://github.com/user-attachments/assets/069fb4d3-e0f9-4a83-9cf9-d2fdec7343f5)
-
-
-
+![Screenshot 2025-02-21 at 10 51 11 AM](https://github.com/user-attachments/assets/337e790c-5010-498d-8acb-5cde1b40f773)
 
 
