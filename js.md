@@ -366,6 +366,21 @@ function getAge1 (args){
 }
 getAge1(21) 
 ```
-> NUMBER 
+> NUMBER
+### 20. In javascript when to use for..of , foreach, map with example ?
+for.. of : can be break loop,used for all iteration set,array,string.
+```
+const message = "Hello"; or const mySet = new Set([1, 2, 3]);
+for (const char of message) {
+  console.log(char); // Output: H, e, l, l, o (each on a new line)
+}```
+
+foreach:    no break in loop, used for side effect, works on array
+Map:  no break in loop, used for side effect, works on array,  new arrary creation 
+
+![Screenshot 2025-02-21 at 10 51 11 AM](https://github.com/user-attachments/assets/069fb4d3-e0f9-4a83-9cf9-d2fdec7343f5)
+
+
+
 
 
