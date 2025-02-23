@@ -1,20 +1,21 @@
 JOb
 
-HTML 
-	eventListner 
-	Placeholder 
-JS 
-https://github.com/sudheerj/javascript-interview-questions
+### HTML 
+- eventListner 
+- Placeholder 
+#### JS 
+- https://github.com/sudheerj/javascript-interview-questions
 
-
+### youtube
+```
 https://www.youtube.com/@DevAditya/
 https://www.youtube.com/@reactdeveloperinterviewseries
 https://www.youtube.com/watch?v=uknTKIsptGM
 https://www.youtube.com/@interviewguideformnc/videos
-
 https://www.reddit.com/r/webdev/comments/t9gdrx/developers_who_work_100_remotely_how_did_you_get/
-
-5 Project to revise :
+```
+### 5 Project to revise :
+```
 Callback:  https://stackblitz.com/edit/react-ts-sgesnf?file=App.tsx,ComponentB.js,ComponentA.js,index.html
 card: https://codesandbox.io/s/nervous-night-2unonk?file=/src/CardList.css:80-84
 Table: https://codesandbox.io/s/laughing-johnson-cvv16k?file=/src/App.js
@@ -28,15 +29,7 @@ https://www.youtube.com/watch?v=gaFA9gOore0
 https://www.educative.io/blog/react-router-tutorial
 Test css: https://www.javatpoint.com/css-mcq
 Test html : https://www.javatpoint.com/html-mcq
-
-
-Current/Preferred location-
-https://career10.successfactors.com/career?company=LTTS&loginFlowRequired=true&lang=en_GB&_s.crb=PDm23xc7oOheblP1Q1ofebyjJ4ln4DDuVl7a%252bWBEOdI%253d
-Shankar1.7
-
-
-——————————————
-
+```
 
 1) Terms: to translate screen mockups from design team into pixel perfect Web app screens including animations 
 2) Responsive UI
@@ -48,18 +41,20 @@ GraphQL
 
 https://www.servicenow.com/community/now-platform-forum/when-to-use-stringify-and-when-to-use-parse/m-p/1107046
 
-1. To convert JSON data/String --> JavaScript object using the built-in JSON.parse() function. For example,
-Receive = parse  
-
+### JSON OBJECT
+- To convert JSON data/String --> JavaScript object using the built-in JSON.parse() function. For example,
+- Receive = parse  
+```
 // json object
 const jsonData = '{ "name": "John", "age": 22 }';
 
 // converting to JavaScript object
 const obj = JSON.parse(jsonData);
 { "name": "John", "age": 22 };
-
-2. To convert JavaScript objects --> JSON format/Data(JSON data can also be referred to as JSON String) using the JavaScript built-in JSON.stringify() function. For example,
-Bhejne waqt STRINGYFY - JSON OBJEct 
+```
+-  To convert JavaScript objects --> JSON format/Data(JSON data can also be referred to as JSON String) using the JavaScript built-in JSON.stringify() function. For example,
+- Bhejne waqt STRINGYFY - JSON OBJEct 
+```
 // JavaScript object
 const jsonData = { "name": "John", "age": 22 };
 
@@ -68,10 +63,10 @@ const obj = JSON.stringify(jsonData);
 
 // accessing the data
 console.log(obj); // "{"name":"John","age":22}"
+```
 
 
-
-# Others Interview 1
+# 1 Others Interview 1
 ```
 1 O/p 
 
@@ -103,8 +98,8 @@ console.log(obj); // "{"name":"John","age":22}"
 
 11 Lifecycle methods how to implement in function ? useEffect(side effect, dependency )
 ```
-Others Interview 2
-——————————
+# 2 Others Interview 2
+```
 1 Hooks ? - lifecycle management	,features - useeffect(lifecycle management, fetching data,),useref,useMemo
 2 Features of react- jsx,one way data binding, Virtual DOM
 3 Jsx- javascript xml, helps developer  to write html in react 
@@ -133,9 +128,11 @@ If you want to do MAP, foreach and store in variable - map return value but Fore
 Css 
 16 strong type VS bold type: strong - how important the content is & bold- for highlighting 
 17 external css, inline  : types of css- internal 
+```
 
-Others Interview 3
-——————————
+# 3 Others Interview 3
+
+```
 1 difference between let and const and var scope - var support hosting - undefined used  before declared , for let & const - reference error 
 		- move top of scope 
 		- const has block scope - reference is constant , for object/array we can update	
@@ -191,9 +188,10 @@ function convertSingleDigit(n){
     return sum
 }
 convertSingleDigit(5431)
+```
 
-Others Interview 4 : https://www.youtube.com/watch?v=9cQsv91zBsc&t=838s
-—————————
+# 4  Others Interview 4 : https://www.youtube.com/watch?v=9cQsv91zBsc&t=838s
+```
 1 Precedence in eventLoop- setTimeout and promise which ? Promise because microTask Queue
 2  setTimeout  VS setInterval : setTimeout (executes only once, after timer expired 	)and setInterval (runs on every interval what time you have mentioned)
 	-HOW TO STOP: using clearInterval(null)
@@ -254,9 +252,9 @@ React :
 19 HOC- accept function and return function eg- MAP,reducer, js -curring closure 
 20 Redux ,contextAPI
 21 middle where - thunk : intercept the action 
-
-Other interview : 5
-————
+```
+# 5 Other interview : 5
+```
 1 controlled VS uncontrolled ? Controlled component- form data is handled by React component, uncontrolled : form data is handled by DOM
 2 Adv of React hooks?: simple implementation- life cycle methods, simple 
 3 JSX? - java script which provide write HTML in react
@@ -270,8 +268,6 @@ Other interview : 5
 
 		return <ul>{list}</ul>;
 Incorrect Use of Keys (Index as Key): Using the array index as a key is not ideal when the list can change (e.g., items are added, removed, or reordered). It can lead to incorrect re-renders.
-
-
 6 HOC: accepts fun and return function - maps, OR accepts component in arg and return new component - with additional features /resue 
 		button click 
 7 Real DOM vs Virtual DOM ? Real DOM :Processing will done on every line of code -slow
@@ -307,10 +303,10 @@ o/p
 {name: 'Akki'}
 {name: 'Akki'}
 {[object Object]: {name: 'Akki'}}
+```
 
-
-Other interview : 6
-————
+# 6 Other interview : 6
+```
 1 Class Vs function ? Class - keywords, extends from React.Component, constructor( super/this.state/bind} lifecycle management 
 				 function- keywords -life cycle management- use effect, NO Random methods, Easier to test - simply JS function 
 2 which one to use ? - Class for more complex- data management and state management 
@@ -327,9 +323,10 @@ Middleware Thunk : used to handle action which might be not be synchronous -
 
 6 if big project - if lot of console log it will create huge log - how to resolve - how to switch on control or switch off control: 
 	Since log is part of the window object, you can simply access the window object and disable it
+```
 
-Others Interview 7
-————————
+# 7 Others Interview 7
+```
 1 Features of React: Virtual DOM, View layer, fast, one way data binding, JSX-write HTML, component- reuse
 2 One way data binding ? - data flows in one direction 
 3 use of babel: compiler converts JSX- into Javascript OBJECT
@@ -364,10 +361,10 @@ https://legacy.reactjs.org/docs/strict-mode.html
       </Routes>
     </BrowserRouter>
 16 DB/NODEJS- Joins left joins -all record of left side and 
+```
 
-
-Others Interview 8
-—————————
+# 8 Others Interview 8
+```
 HTML
 1 !DOCTYPE: information to browser what document type is expected 
 		<!DOCTYPE html>
@@ -405,10 +402,11 @@ for (const element of arr){
 console.log(count)
 
 { '1': 3, '2': 1, '3': 1, '4': 1 }
+```
 
+# 9 Others Interview 9 ******
 
-Others Interview 9 ******
-—————————
+```
 1 Redux vs Hooks
 2how to add css and javascript globally in react js
 	public folder : styles.css in the css directory and app.js in the js directory.
@@ -478,10 +476,11 @@ function MyComponent() {
     </div>
   );
 }
+```
 
+# 10 Other Interview 10
 
-Other Interview 10
-—————
+```
 Q what is optional chaning ? Trying to access nested object if it doesn’t exist give error 
 
 const obj = {
@@ -509,9 +508,10 @@ console.log(obj.prop1?.prop2?.prop3); // prints "Hello world"
 console.log(obj.prop1?.prop2?.prop3?.prop4); // undefined
 
 // trying to access prop4 does not exist - no error 
+```
 
-Other Interview 11
-——————————
+# 11 Other Interview 11
+```
 1 regular fun VS  arrow Function : bind , simple es6 
 
 Regular function:This Binding: this within a general function is determined by how the function is called.
@@ -615,9 +615,9 @@ registerServiceWorker - for slow Internet
 		function Mycomponent(){
 		return (
 			<div>OtherComponent</div>) }
-
-Other Interview 12: CTS: https://www.youtube.com/watch?v=mgibv2rXiEU
-————————
+```
+# 12 Other Interview 12: CTS: https://www.youtube.com/watch?v=mgibv2rXiEU
+```
 1 what is EventBubbling and eventLooping in Javascript
 	EventLoop: handles asynchronous data 
 	EventBubbling: when there is event Trigger nested of Element handled by Parent DOM 
@@ -665,9 +665,10 @@ Part 2: https://www.youtube.com/watch?v=h4QOOvzk0UM
 	-Unit testing, 
 	- Performance testing 
 	- Jest testin - toMatchSnapshot render code coverage 
- 
-Other Interview 13
-——————————
+ ```
+
+# 13 Other Interview 13
+```
 1) function x(){
         setTimeout(() => {
       console.log(i);
@@ -688,9 +689,9 @@ O/p -1,2
 9 testing -unit testing -jest,engyme - what is strategy -which component go for unit testing - snapshot for all the component 
 10 requirement - support eng & Hindi - globalisation we can use many library - es Intlization ,
 11 how to retrieve data and display whose age > 40 
-
-Other Interview 14
-——————————
+```
+# 14 Other Interview 14
+```
 1) 
 <body>
     <h1 class='heading'>hello </h1>
@@ -743,14 +744,17 @@ Child jsx
 Return <div>{props.state}</div>
 1)If Change in state1 will pre-render parent as well as child 
 2) If change State2 will not rerender child component 
+```
 
-Other Interview 15 LTI https://www.youtube.com/watch?v=BG1fDZbrBDU
-——————————
+# 15  Other Interview 15 LTI https://www.youtube.com/watch?v=BG1fDZbrBDU
+```
 1) HOC how it will help ? What it is going to solve problem
 2) how do you manage data in Project ? Function based -useState(), class based setState - Redux 
 3) Middlewhere -Redux Thunk 
 4 Build tools ?  web pack 
 What is there in web pack configuration file ? Entry point, output,Loaders,Plugin,mode,devserver,resolve 
+```
+```
 https://blog.logrocket.com/versatile-webpack-configurations-react-application/
 https://gist.github.com/iamshaunjp/a1c8fb653ddd5d27c3e38ab55e3c0a44
 
@@ -763,12 +767,15 @@ https://gist.github.com/iamshaunjp/a1c8fb653ddd5d27c3e38ab55e3c0a44
 7. Resolve: The resolve configuration is used to specify how webpack resolves module imports. You can configure custom alias mappings, file extensions, and module directories.
 These are just a few examples of what you may find in a webpack configuration file. The actual configuration can vary depending on the specific requirements of your React JS project. It's common to have more advanced configurations for code splitting, optimization, and handling different environments.
 Webpack is a powerful bundler that allows you to customize and fine-tune the build process to meet your project's needs. The webpack configuration file is where you define these customizations.
+```
+```
 5)Error Boundaries ComponentDidcatch  6) code splitting - lazy loading 
 7) Write a custom code to retrieve data & put error and loading logic from dummyJson 
 8)  how the code will executes useEffect()
-￼
-Part2  LTI https://www.youtube.com/watch?v=ssRvlc57CCk&t=222
-——————————
+```
+
+# 15 Part2  LTI https://www.youtube.com/watch?v=ssRvlc57CCk&t=222
+```
 1 Json data try print based on age in HTML 
 
 const element =[{name: 'ravi',age:30},{name: 'avi',age:20},{name: 'vi',age:25},{name: 'iravi',age:35},]
@@ -832,13 +839,14 @@ myPromise
 			AA is the intermediate level of accessibility compliance
 			AA is the highest level of accessibility compliance
 		AA or AAA standards, web developers can ensure that their applications are usable by a wider range of users, including those with disabilities
-Part2-2  LTI 
-
-
+```
+#### 15  Part2-2  LTI 
+```
 https://www.youtube.com/watch?v=jBlRkN67h9A&t=194s
+```
 
-Other Interview 16: 
-—————————
+# 15 Other Interview 16: 
+```
 1 var a =10;
 {
     var a = -10
@@ -859,8 +867,9 @@ class Example { // Instance field name = "Instance Field";
 			// Arrow function as a class property arrowFunction = () => { console.log("Bound to instance automatically"); }; 
 			// Static method static staticMethod() { console.log("I am a static method"); } }
 Function :Use methods for defining behavior and properties for storing data or references. Arrow functions as properties are often used to avoid binding issues.
-
-css
+```
+### css
+```
 5 Visibility = none: does not take space VS viability= hidden : take space
 6 Margin vs Padding : Padding : diff between content and broader    padding-space inside element , margin -space around element 
 7) == VS === : == (Value),===(value & TypeOF)
@@ -874,9 +883,10 @@ css
 15)State vs Redux 
 16) Multiple Hooks- user,useState,useEffect,useMemo,useCallback,useSelector 
 17)fecthapi -used in UI UseEffect 
+```
 
-Other Interview 17
-————————
+# 17 Other Interview 17
+```
 1. Explain var, let and constant with respect to Hoisting
 2. What is the output?
 
@@ -914,9 +924,9 @@ function mul(a){
 8. Explain Redux
 9. Explain React Hooks.
 10. What are Pure Components?
-
-Other Interview 18
-———————
+```
+# 18  Other Interview 18
+```
 Q1. Difference between let, var and const.
 Q2. // Get output 1,2 without using let.
 for(var i=0; i<=2; i++){
@@ -964,9 +974,9 @@ Q21 Lazy loading ?
 Q22 How to manage nested routes in terms of role based routing?
 Q23 Ask to interview :: What are roles, project etc.
 Show less
-
-Other interview	19
-———————————
+```
+# 19  Other interview	19
+```
 1)What is higher order functions,
 2)Global execution,
 3)Lexical scoping, 
@@ -983,18 +993,10 @@ Package Registry:/Concurrency/Lockfile/CLI and commands/Community and Ecosystem
 12)How to commit specific commit from working to development branch,
 13)What is rebase in github, : two developer working on the same Module 
 The git rebase command allows you to easily change a series of commits, modifying the history of your repository. You can reorder, edit, or squash commits together.
-
-
-
-
-
-
-
-
-
+```
 
 ——————— 
-Interview :
+# Interview :
 
 1) Company info 
 2) Hiring process 
@@ -1066,18 +1068,17 @@ Payscle in you company for this company range compansestion offering for this pa
 I am looking from
 
 Tellme About youself:
-I am Ravi Shekhar Kumar, Born in Jharkhand,
+I am Ravi, Born in Jharkhand,
 I have done my schooling from Jharkhand,
 I have done my egg Dyandnda sagar college of egg
 Over the period of 9 years - I have majory work with company like HCL AND wipro
 Into majorly on Domain Banking side -, 3 years on healthcare 
 I was most onto development , were Individual contributor ,team player and also work on leading the team 
 Now I am looking to take my carrier ahed and that why I have applied for this opportunity 
-This role will help advance my skill & My 9+ experience will help for challenging project
+This role will help advance my skill & My 9+ experience will help for challenging project```
 
-
-Project: 
-—— 
+### Project: 
+```
 1)
 Banking: card: card generation -lost,broken,renew card 
 	   banking and saving - added enhance funcality for login process 	   Loan(Credit Management)- PPI tom Onboarding 
@@ -1108,8 +1109,9 @@ Banking: card: card generation -lost,broken,renew card
 		lifecycle -check ComponentDidMount and -readCookie
 	5) for logout or timeout it delete the cookie 
 
-
-pixel perfect responsive website : CSS- Css
+```
+### pixel perfect responsive website : CSS- Css
+```
 Animation :
 1) CSS method (18)
 	OnClick nabber close/open 
@@ -1123,14 +1125,11 @@ Animation :
     React-transition-group 
 4 React animation : animation key From and bounce 
 	https://medium.com/hackernoon/5-ways-to-animate-a-reactjs-app-in-2019-56eb9af6e3bf
+```
 
-Q & A:
 
-Internal :
-Webpack 
-
-Q & A: HDFC
-
+# 1 Self Q & A: HDFC
+```
 Js 
 1. Arr1 = [1,2[3,4],[4,5[7,8]]]
 Make it simple Arr1 =[1,2,3,4,5,7,8]
@@ -1175,21 +1174,22 @@ https://blog.logrocket.com/using-react-useeffect-hook-lifecycle-methods/#using-c
 8  UseMemo 
 9 React.memo Memozie (reduce time ) in class component when wraps: https://dev.to/nibble/react-memo-and-react-purecomponent-3k7k
 10 pure component 
+```
 
-HCL :
-Js 
+# 2 Self HCL :
+```
 1 Fibonacci series
 2 design pattern  in js
-
 
 1 What all custom hooks you have done - useFetch()
 2 how useEffect will get all lifecycle medthods- componentDidMount(),componentDidUpdate(),componentWillUnmount
 3 hooks useCommand and useCallBack ?
 4 which is good class or function : it depends  - Redux vs Context api 
 5 how to measure the performance : light house, dynamic import, lazy loading , reduce unnecessary folders in css
+```
 
-
-Cybage Software
+# 3 Self Cybage Software
+```
 JS: 
 1 const arr=[1,2,3];
 console.log(arr);
@@ -1242,9 +1242,9 @@ Pure component will only re- render when its props/state changed : avoids unnece
 When using pure components, it's important to keep in mind that they only do a shallow comparison of props and state to determine whether to re-render
 7 are you using test cases for unit testing -Jest/engyme- for DOM level
 8 Have you used TypeScript ? Redux 
-​
-TCS:
-
+```
+# 4 Self TCS:
+```
 Sdlc vs Agile?
 SDLC - software lifecycle development methods-
 		 1. requirement gathering - BA & Tech Architect 
@@ -1309,10 +1309,8 @@ Handle by : Scrum master - understand work are done by team and help them how to
 		- product incremental bias 
 
  	
-
-			
-https://agilemanifesto.org/
-
+```
+```
 Who was driving call agile call?
 Agile Methodology 
 For performance improvement what are the 10 thing you will Propose to code 
@@ -1324,9 +1322,9 @@ Have you used git?
 Ci/cd pipeline 
 Why should I hire you
 Have you used tool like sonar
-
-
-
+```
+### Question 
+```
 1 Why Reactjs ?
 2 Class vs Function :
 3 Error Boundary VS try catch finally ? componentDidcatch
@@ -1340,11 +1338,10 @@ Have you used tool like sonar
 10 constructor ?
 11  test cases are you writing any test cases-Jest/engyme- for DOM level
 12 responsive : mediaQuery 
+```
 
-
-ravishekhar07@outlook.com
-
-accolitedigital
+# 5 Self accolitedigital
+```
 let res = str.replace(/hello/g,'hello Shaket') 
 
 1 var str= "Welcome to Programiz!";
@@ -1390,16 +1387,21 @@ console.log(reverse('Here are those implementation:'));
 3 fetch data from url : https://jsonplaceholder.typicode.com/posts
 And displays in css cards
 https://www.w3schools.com/howto/howto_css_cards.asp
+```
 
-Internal :
+# 6 Self Internal :
+```
 Q. How to pass data : LIST -keys, props,Callback
 		if the list updated it will not re-render complete list - Virtual DOM check for change and only update the DOM with new added element 
 		
 How much time required to convert wireframe to HTML code
-What is difference between struts and rest PARAMETER 
-
-CTS: 
-
+What is difference between struts and rest PARAMETER
+Internal: 
+https://codesandbox.io/s/thirsty-field-ozekod?file=/src/App.tsx
+https://codesandbox.io/s/confident-frost-cbcd6o?file=/src/App.tsx
+```
+# 7 Self CTS: 
+```
 1) What is useref
 2 )what is HOC ? Where have you used it : login ? & what problem does it solve: reusability | props manipulation | design complex solution 
 
@@ -1479,15 +1481,10 @@ delete Employee.firstname; delete object[key1];
 13 Fetch data and display in table 
 “https://reqres.in/api/users?page=2"
 https://codesandbox.io/s/laughing-johnson-cvv16k?file=/src/App.js
-14 use of ‘this’ operator 
-CTS2 
-Internal: 
-https://codesandbox.io/s/thirsty-field-ozekod?file=/src/App.tsx
-https://codesandbox.io/s/confident-frost-cbcd6o?file=/src/App.tsx
-
-CTS2:
-// Online Javascript Editor for free
-// Write, Edit and Run your Javascript code using JS Online Compiler
+14 use of ‘this’ operator
+```
+# 8 Self CTS2 
+```
 // console.log("Welcome to Programiz!");
 
 //Mounted
@@ -1611,8 +1608,10 @@ let object ={
 let object2 = {() => {console.log()}
 
 object2.Prototype.__proto__ =object
-
-Media.net HTML
+```
+# 9 Self Media.net 
+```
+HTML
 1 ) Difference between  <script>, <script async>, <script defer>
 2) What is dataSet attributes in HTML
 3) <a href="#" data-name="ravi" />
@@ -1642,9 +1641,10 @@ CSS 7) what is box Model
 9) create tab into Reactjs
 https://codesandbox.io/s/lucid-mountain-zl2qdk?file=/src/ComponentA.js
 10) Difference between Local and session storage 
- 
+``` 
 
-CTS 3:
+#  10 Self CTS 3:
+```
 import "./styles.css";
 import {useEffect} from 'react'
 
@@ -1719,15 +1719,14 @@ console.log("Welcome to Programiz!");
 // console.log(reverse.join(''))
 // }
 
-
-[4:07 pm] John Ramar
+```
+# 11 self 
+```
 const fruits = ["apple", "orange", "grapes", "pineapple"];
 using destructuring create vaiables a and b.  a should contain apple b should contain rest of the elements from fruits
 
-[4:21 pm] John Ramar
 interceptor
 
-[4:26 pm] John Ramar
 CRUD operations --------------- Create two route and show menu 1. Add User(Show user form, validate and send it to API) 2. List User(Pull previously added users and list them in table format) use https://crudcrud.com/ for REST API calls
 //const fruits = ["apple", "orange", "grapes", "pineapple"];
  
@@ -1774,7 +1773,8 @@ parent->child : props
 redux
 
 store -state
-
+```
+```
 1. // Form validation
 // -----------------
 // name - text (minimum 4 chars)
@@ -1786,10 +1786,10 @@ store -state
 2) CRUD operations --------------- Create two route and show menu 
 1. Add User(Show user form, validate and send it to API)
  2. List User(Pull previously added users and list them in table format) use https://crudcrud.com/ for REST API calls
+```
 
-
-Telstra :
-
+# 12 self Telstra :
+```
 Q. What is wrong with code 
 How to stop re rendering Parent/child 
 
@@ -1873,8 +1873,9 @@ Q.what is difference between foreach and map in javascript
 Foreach: -iteration, such as updating the DOM, logging values, or modifying the existing array
 Map: iteration with return new array with result, It is used when you want to transform each element of an array and create a new array with the transformed values.
 Example: var arr =[1,2,3,4]  ; arr.forEach(item=> item*2) 
-
-Nagarro
+```
+# 13 self Nagarro
+```
 1)Section and div : semantic
 2)eventPropa gation vs immediate propagation  
  immediate propagation  : propagating to parent elements but also prevents any other event handlers on the same element from executing. It effectively stops both the bubbling phase and the execution of any remaining event handlers on the current element.
@@ -1882,6 +1883,8 @@ Nagarro
 4)psudo element ? 
 5)BrowserObjectModel ? BOM
 6)MapObject vs Object ?
+```
+```
 1. Object:
     * Object is a built-in data type in JavaScript used to represent a collection of key-value pairs.
     * Objects are unordered and use string keys to access values.
@@ -1894,8 +1897,8 @@ Nagarro
     * Keys in a Map can be of any data type (primitive or object) and maintain their insertion order.
     * Unlike objects, Map provides built-in methods for operations like adding, removing, and iterating over entries.
 4. Example: javascript  Copy codeconst myMap = new Map(); myMap.set('name', 'John'); myMap.set(1, 'one'); myMap.set({ key: 'value' }, 'object'); console.log(myMap.get('name')); // Output: 'John' console.log(myMap.get(1)); // Output: 'one' console.log(myMap.get({ key: 'value' })); // Output: 'object'
-
-
+```
+```
 7)For in vs For of when to use in ?
 Feature	for...in -keys	for...of -value 
 Iterates over	Enumerable properties	Values
@@ -1921,10 +1924,9 @@ xyz() - undefined
 12)Why we use synthetic event in React ? What is synthetic event? We already have event handling why react use it 
 Since native event does it already: is behaves same in different browsers 
 13 Session broker: works on without internet  vs web broker: Multi thread works in background 
-
-Mphasis:
-
-[10:28 am] Tammina Rao
+```
+# 13 self Mphasis:
+```
 Qprepare a snippet that covers below cases and returns 1 output green -> Keep Moving yellow -> get ready to Move, need to wait for few secs red -> Not Allowed to Move, stay behind the cross line
 input will be :: decisionMaker('red')
 function TrafficLight(input){
@@ -1948,12 +1950,9 @@ console.log(str.split('').reverse('').join(''))
 for (let i =str.length-1; i<0;i++  )
 
 https://randomuser.me/api/?exc=login
-
-[11:15 am] ravi shekhar kumar (Guest)
 let a =1;
 leb b ={ ..a}
 
-[11:16 am] ravi shekhar kumar (Guest)
 let b ={ ..a}
 export default function App() {
   const URL ='https://randomuser.me/api/?exc=login'
@@ -1984,8 +1983,9 @@ export default function App() {
     </div>
   );
 }
+Q Difference between block elements and inline elements
 Q Memory leakage  ? how to check is your code is Memory leakage  proof ? in javascript
-
+```
 * Use the Chrome DevTools Memory tab. This tab will show you a live view of your application's memory usage. If you see the memory usage increasing over time, it is likely that you have a memory leak.
 * Use the debugger statement. This statement will pause your code execution, so you can inspect the memory usage at a specific point in your code.
 * Use a memory profiler. There are a number of memory profilers available, such as the V8 Heap Profiler and the Chrome Memory Profiler. These tools can help you to identify memory leaks in your code.
@@ -1997,13 +1997,10 @@ Here are some tips to help you avoid memory leaks in JavaScript:
 * Use the gc() function to manually garbage collect objects. This can help to prevent memory leaks from occurring.
 * Use the weakref() function to create weak references to objects. Weak references will be garbage collected when the object is no longer needed.
 * Avoid creating objects in loops. If you must create objects in a loop, make sure to garbage collect the objects that are no longer needed.
-* Avoid storing objects in global variables. If you must store objects in global variables, make sure to clean them up when they are no longer needed.
-
-
-
-Q Difference between block elements and inline elements
-
-Mphasis: 2
+* Avoid storing objects in global variables. If you must store objects in global variables, make sure to clean them up when they are no longer needed.```
+  
+# 14 self Mphasis: 2
+```
 Q delcaritve and imperative : JS is both 
  
   Declarative (Functional ) React/Redux: what you want without how to code  -functional/logical 
@@ -2016,10 +2013,10 @@ Q Redux store variable in browser where ?
 Q Accessibility 
 Accessibility in CSS refers to designing and developing CSS styles in a way that ensures web content is accessible to all users, including those with disabilities. CSS can play a significant role in improving the accessibility of a website by providing visual cues, enhancing readability, and enabling assistive technologies to interpret and present content effectively.
 Q what are new version of react and new thing implemented
+```
 
-
-UST Product Engineering
-
+# 15 self UST Product Engineering
+```
 a = [{a: 1}, {b: 2}, {a: 1}, {c: 0}]
 // output [{c: 0}, {a: 1}, {b: 2}]
 Sort based on values and remove duplicates on key
@@ -2030,11 +2027,14 @@ const sortedAndDistinct = [...new Map(a.map(item => [JSON.stringify(item), item]
   .values()] .sort((obj1, obj2) => Object.values(obj1)[0] - Object.values(obj2)[0]);
 
 console.log(sortedAndDistinct);
-
-HCL2
+```
+# 16 self HCL2
+```
 Q. How to check given number is  integer without using inbuilt typeOF- Math.floor
- 
-Virtusa
+ ```
+
+# 17 self  Virtusa
+```
 var myObject = {
                 foo: "bar",
                 func: function() {
@@ -2081,8 +2081,9 @@ Purpose	Creating UI components	Rendering UI components to the DOM
 Library or package	Library	Package
 Dependency	Not required	Required
 Use cases	Creating interactive web UIs	Rendering React components to the DOM
-
- EPAM:
+```
+# 17 self  EPAM: *****
+```
 1) Define Apply with real life example
 // let name = 'ravi'
 
@@ -2101,8 +2102,9 @@ npm install package-name --save-dev
 7)performance 
 9) React vs ReactDom
 10)SEO,SSR CSR, drawbacks with SEO -CSR 
-
-Synechron
+```
+# 17 self Synechron
+```
 1.Display keys of object not using for loop, find null keys(for (let I in Object))
 let user ={
     name : "Balaji",
@@ -2119,9 +2121,10 @@ const returnedTarget = Object.assign(target, source);
 3)Write program useCallback,Contextapi 
 4)Difference between Grid vs flexbox
 The best choice for you will depend on your specific needs. If you need a two-dimensional layout, then CSS Grid is the better choice. If you need a one-dimensional layout and you're a beginner, then Flexbox is a good option.
+```
 
-Altimatrix:
-[3:41 pm] ravi shekhar kumar (Guest)
+# 17 self  Altimatrix:
+```
 constChild=(props)=>{
 letcount=1;
 // const [callback] = ;
@@ -2167,9 +2170,10 @@ Infosys
 2 Login page how the bearer token will our page identifies, how it will know same user logged 
 3 error boundary in functional component 
 4 lifecycle managemnt  in Functional Component 
+```
 
-
-Connectwise
+# 18 self Connectwise
+```
 1) pure function 
 2)web pack- what happens once user hit the your app ? -  ip/port - bundle.js - dependency tree, output ,plugin 
 3)deployment -
@@ -2228,10 +2232,10 @@ O/p
 timerStart
 timerEnd
 success
+```
 
-
-Admiral india
-——————
+# 18 self  Admiral india
+```
 Closure 
 Fetch vs axis  - how you call for POST method in Fetch 
 Felxbox vs Grid
@@ -2246,32 +2250,22 @@ How you stop form to send data - once submitted it automatically naviaged to nex
 SQL : find all those employee names are duplicate 
 	select Name from Employee group by name  having count(*) >1 
 What are different sector in css ?
+```
 
 
 
+# Frequent Question & must
 
-
-
-
-
-
-
-
-
-
-Observe : more focus on  live coding & more writing examples 
-Be Choosy when you given more question 
-
-
-Frequent Question & must
-
+```
 Splice, Reverse,split,replace,Object 
 For Loop, In Loops
 New array : Splice,map,sort,
 Insert at specific location =splice
 Insert at front: shift/unshift
 Insert in stack: push, pop
-
+Observe : more focus on  live coding & more writing examples 
+```
+```
 1)Closures : data hiding 
 function x(){
     var a =10
@@ -2334,17 +2328,34 @@ ALL 3 takes memory storage & use === to check
 17)Difference between let, var and const- var with setTimeout - how to resolve- using let 
 	if we don’t use let then- call setimout as function 
 18)Synthetic Event: SyntheticEvent is a cross-browser wrapper around the browser's native event. It's API is same as the browser's native event, including stopPropagation() and preventDefault(), except the events work identically across all browsers
-
+```
 
 CSS:
-1)BOX model:
-2)Sematic tag: meaning full tag -section ,input, etc
+```
+
+0)Sematic tag: meaning full tag -section ,input, etc
 search engine optimization (SEO), and maintainability of the HTML code. 
 Semantic elements provide more context and clarity to both humans and machines, making it easier to understand and work with the content.
-3)
+1)Position Relative & absolute Position 
+position	relative	absolute
+Overflow	Overflow of the element is calculated relative to its original position/Normal Position/DOM 	Overflow of the element is calculated relative to its new position/relative to parent 
+Visibility	Visibility of the element is not affected	Visibility of the element is affected
+
+2)BOX model: padding, margin, Border,content 
+3)responsive: define class, in css - define media query for that class
+Eg- @media (min-width: 768px) {
+  .desktop-image {
+    display: block;
+  }
+}
+4)BLOCK: complete line - h1-h6 vs inline : takes how much required SPAN,img,label,BR 
+https://www.geeksforgeeks.org/difference-between-block-elements-and-inline-elements/
+
+```
 
 
-Extra:
+# Extra:
+```
 1) Want to collapse/expand grid  -But not the inner grid section update : onClick = {e => {e.stopPropagation() }}
 2) can we define constructor/this in function - no because stateless
 3) Multiple link/url to get data at a time : Promise.all(URLArray.map(url=> fetch(url)))
@@ -2404,29 +2415,11 @@ Update inside UseEffect - how to prevent : do not update
 Incorrect dependencies useEffect
 Unconditional state updates- without any check if updates can lead to infinite loop
 Recursive component rendering:
- 
+```
 
 
 
-
-
-CSS
-1)Position Relative & absolute Position 
-position	relative	absolute
-Overflow	Overflow of the element is calculated relative to its original position/Normal Position/DOM 	Overflow of the element is calculated relative to its new position/relative to parent 
-Visibility	Visibility of the element is not affected	Visibility of the element is affected
-
-2)BOX model: padding, margin, Border,content 
-3)responsive: define class, in css - define media query for that class
-Eg- @media (min-width: 768px) {
-  .desktop-image {
-    display: block;
-  }
-}
-4)BLOCK: complete line - h1-h6 vs inline : takes how much required SPAN,img,label,BR 
-https://www.geeksforgeeks.org/difference-between-block-elements-and-inline-elements/
-
-Redux:
+# Redux:
 1 Multiple reducer component how your component will identifier which reducer called  
 combineReducers we can use key Value pairs 
 2 useSelector to get data anytime 
@@ -3058,8 +3051,8 @@ Error Boundary
 Q14 What are refs in React?
 Q15 forwardRefs in React?
 
-Seaason 2
-Tech Mahindra 
+# Seaason 2.1 Tech Mahindra 
+```
 Q. Output 
 // console.log(count())
 // console.log(count())
@@ -3086,7 +3079,7 @@ How data can be passed from child to parent - callback or Redux
 Q. Next js - server side rendering 
 Q. Figma, Webpack 
 Q. How you fetch the continuous data from backed from UI eg. score Live - setInterval is not good approach 
-
+```
 DEBasis Node js  
 Q nodejs  - how to send html 
 Q. create server 
