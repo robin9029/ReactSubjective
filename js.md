@@ -1088,7 +1088,8 @@ async function asyncTask() {
   } catch (err) {
     logger.error(err);
   }
-} ```
+}
+```
 
 ![Screenshot 2025-02-23 at 10 09 33 AM](https://github.com/user-attachments/assets/ebec0e86-788d-41d6-a34d-a50c7774607d)
 
