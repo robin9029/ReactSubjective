@@ -1,20 +1,11 @@
 JOb
 
-Confidence : 
-Interview of types: 
-1 Hardcore knowledge of JS with CSS and html
-2 all 3(JS,HTML,CSS) basic with coding knowledge of REactjs
-3 Basic of all the 4
-
 HTML 
 	eventListner 
 	Placeholder 
 JS 
 https://github.com/sudheerj/javascript-interview-questions
 
-HR LTI Shobana Ravi 
-
-Interview series: itsCodingDoctor
 
 https://www.youtube.com/@DevAditya/
 https://www.youtube.com/@reactdeveloperinterviewseries
@@ -22,29 +13,6 @@ https://www.youtube.com/watch?v=uknTKIsptGM
 https://www.youtube.com/@interviewguideformnc/videos
 
 https://www.reddit.com/r/webdev/comments/t9gdrx/developers_who_work_100_remotely_how_did_you_get/
-
-JWT -
-UserName,PWD -> Backedned
-Check username exist 
-Backed- authorised token 
-
-
-Manpowergroup Services India Pvt Ltd  swati: 
-Contact no: +91 8660126371
-
-
-vismaya@forterecruits.com
-￼
-
-First Name:Ravi Shekhar
-Last Name: Kumar
-Email Id: robin9029@gmail.com
-Skill: ReactJs, Redux, HTML, CSS,SASS, Bootstrap,javascript
-Contact Number: 8056044372
-Location: Bangalore
-Current Organization: Wipro
-Total Years of Experience: 9+ years
-Relevant Experience: 3.5+ years
 
 5 Project to revise :
 Callback:  https://stackblitz.com/edit/react-ts-sgesnf?file=App.tsx,ComponentB.js,ComponentA.js,index.html
@@ -54,34 +22,25 @@ Form Validation:https://codesandbox.io/s/amazing-dhawan-9eeeky
 Route https://codesandbox.io/s/r0wxp0njw?file=/index.js
 Test: https://codesandbox.io/p/sandbox/confident-frost-cbcd6o?file=%2Fsrc%2Findex.js
 https://codesandbox.io/p/sandbox/intelligent-grass-p43q9y
-
 https://stackblitz.com/edit/react-5pmxbh?file=src%2FApp.js,src%2FEventHandler.js,src%2FApp1.js,src%2FHeader.js,src%2FDimExample.js,src%2FParent.js
-
 https://github.com/srwaditya/Javascript_Tutorial/blob/main/Nagaaro%20Interview%20Question
 https://www.youtube.com/watch?v=gaFA9gOore0
-
 https://www.educative.io/blog/react-router-tutorial
 Test css: https://www.javatpoint.com/css-mcq
 Test html : https://www.javatpoint.com/html-mcq
-
-
-https://onecompiler.com/javascript/3z6yng8y5
-https://onecompiler.com/javascript/3z6yvpfhr
 
 
 Current/Preferred location-
 https://career10.successfactors.com/career?company=LTTS&loginFlowRequired=true&lang=en_GB&_s.crb=PDm23xc7oOheblP1Q1ofebyjJ4ln4DDuVl7a%252bWBEOdI%253d
 Shankar1.7
 
-k65296505
-——————————————
 
-And what other things is required with snowflake technology: data modeming 	
+——————————————
 
 
 1) Terms: to translate screen mockups from design team into pixel perfect Web app screens including animations 
 2) Responsive UI
-3)  Performance/optimization : Lighthouse - https://techblog.geekyants.com/improve-web-app-performance-using-lighthouse
+3) Performance/optimization : Lighthouse - https://techblog.geekyants.com/improve-web-app-performance-using-lighthouse
 4) Testing : jest,engyme 
 
 Keyword: 
@@ -112,8 +71,8 @@ console.log(obj); // "{"name":"John","age":22}"
 
 
 
-Others Interview 1
-——————
+# Others Interview 1
+```
 1 O/p 
 
 “A”-“B” = NAN
@@ -143,7 +102,7 @@ Others Interview 1
 				4. React hook dependency changes 
 
 11 Lifecycle methods how to implement in function ? useEffect(side effect, dependency )
-
+```
 Others Interview 2
 ——————————
 1 Hooks ? - lifecycle management	,features - useeffect(lifecycle management, fetching data,),useref,useMemo
