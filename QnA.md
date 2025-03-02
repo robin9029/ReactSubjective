@@ -1,8 +1,5 @@
 JOb
 
-### HTML 
-- eventListner 
-- Placeholder 
 #### JS 
 - https://github.com/sudheerj/javascript-interview-questions
 
@@ -2263,24 +2260,24 @@ New array : Splice,map,sort,
 Insert at specific location =splice
 Insert at front: shift/unshift
 Insert in stack: push, pop
-Observe : more focus on  live coding & more writing examples 
+Observe : more focus on  live coding & more writing examples
 ```
+
+### 1)Closures : data hiding 
 ```
-1)Closures : data hiding 
 function x(){
     var a =10
     function y()
     {
         console.log(a)
     }
-    return y     //Function Name
-}
-
+    return y     //Function Name}
 var z =x()
 console.log(z) //return function y
 z() // runs y
-
-2)HOC: taking function, modify it and then render:
+```
+###  2)HOC: taking function, modify it and then render:
+```
 Eg- calculate(logic,radiusArray) return calculated result
 
 function HOC(WrappedComponent) {
@@ -2288,14 +2285,15 @@ function HOC(WrappedComponent) {
     return <div><WrappedComponent {...props} /></div>;
   };
 }
-
-3)Difference between useMemo VS react.Memo vs Callback
+```
+###  3)Difference between useMemo VS react.Memo vs Callback
 useMemo: stores calculation -reCallback: remembers Functions
 React.memo:  Shallow check, previous render data- Classbased
 
-4 Thunk & middleware what is uses 
-5)ContextAPi with implementation 
-6)unMounted
+### 4 Thunk & middleware what is uses 
+### 5)ContextAPi with implementation 
+### 6)unMounted- when you are moving away from one component to another
+```
 useEffect(()=>{
     let mounted =true;
     if(mounted){
@@ -2303,31 +2301,36 @@ useEffect(()=>{
     }
     return ()=>{return mounted=false}
 },[])
-7)Fetch data and display in table
-8)Object traverse, occurrence & or Find maxOccurance 
-9)Reverse String : str.split('').reverse().join('') 
-10)Props and state Difference 
-11) Testing-Jest,engymes 
-12)Virtual DOM VS real Dom - how it is fast
-13) Performance optimisation: css to internal css , react.memo, useMemo,HOC, pure component ,useCallback
-14. Deep copy
+```
+###  7)Fetch data and display in table
+###  8)Object traverse, occurrence & or Find maxOccurance 
+### 9)Reverse String : str.split('').reverse().join('') 
+### 10)Props and state Difference 
+### 11) Testing-Jest,engymes 
+### 12)Virtual DOM VS real Dom - how it is fast
+### 13) Performance optimisation: css to internal css , react.memo, useMemo,HOC, pure component ,useCallback
+### 14. Deep copy
+```
 a)spread operator : update object
 	const student = { name: “ravi”,place:”Sahibganj”,age:33}
 	let StudentOne = {…student,name=“Kumar”}
 b)const deepCopy = JSON.parse(JSON.stringify(nestedObject));
-
-15)Difference between Normal Function 
+```
+### 15)Difference between Normal Function 
+```
 https://betterprogramming.pub/difference-between-regular-functions-and-arrow-functions-f65639aba256
 Arrow function : no bind to argument,This points to parent Non-Arrow Function ,arrow function can’t be used as constructor - new parameter 
-16) null == undefined o/p true | Difference between these two 
-
+```
+### 16) null == undefined o/p true | Difference between these two 
+```
 ‘’: Non empty string its a valid string - stores non empty
 Null: non absence of object value - store null
 Undefined value that has been not assigned : stores undefined 
 ALL 3 takes memory storage & use === to check
-17)Difference between let, var and const- var with setTimeout - how to resolve- using let 
+```
+### 17)Difference between let, var and const- var with setTimeout - how to resolve- using let 
 	if we don’t use let then- call setimout as function 
-18)Synthetic Event: SyntheticEvent is a cross-browser wrapper around the browser's native event. It's API is same as the browser's native event, including stopPropagation() and preventDefault(), except the events work identically across all browsers
+### 18)Synthetic Event: SyntheticEvent is a cross-browser wrapper around the browser's native event. It's API is same as the browser's native event, including stopPropagation() and preventDefault(), except the events work identically across all browsers
 ```
 
 CSS:
