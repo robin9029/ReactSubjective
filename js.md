@@ -87,15 +87,17 @@ issue with Closure
 11)Event delegation vs enent Propagation and immediate propagation and EventBubbling and eventLooping 
 12 ES6 standard : literal, spread, rest, destructure, arrow function 
 13)Progressive Web App (PWA)/ service worker /Web accessibility /AA,AAA standard/Accessibility 
-14)Intereceptor
+14)
 15)What is generator function and why do we use it 
 What will happen if no next is called ? on the iterator object, the generator function will not execute
-16)Deep copy - separate copy 
+if you declare yield command in TSX throw error how to resolve: yield is only allowed inside generator functions (function*).
+16)Deep copy - separate copy , let o1 = { a: { b: 10 } }; 
 const deepCopy = JSON.parse(JSON.stringify(nestedObject));
-17)Event curry ? what is the usage why we use it 
+17)Event curry ? what is the usage why we use it - used for transformation 
 18)Memory leakage 
 19)declarative and imperative : JS is both 
-20)Difference between MAPOBJECT vs object 
+20)Difference between MAPOBJECT vs object - Both are built-in methods, but Mapobject provides for operations like adding, removing, and iterating over entries
+ Copy codeconst myMap = new Map(); myMap.set('name', 'John'); myMap.set(1, 'one'); myMap.set({ key: 'value' }, 'object'); console.log(myMap.get('name')); // Output: 'John' console.log(myMap.get(1)); // Output: 'one' console.log(myMap.get({ key: 'value' })); // Output: 'object'
 21)  global key- payment keys/ gateway keys- these are common and can’t be changed 
 			- store in CONST : block
 			- store in VAR: GLOBAL
@@ -109,6 +111,7 @@ What is difference and how this will impact code/speed: VAR,GLOBAL- increase the
 25) Function return vs no return both are same 
 Const fun =() => true 
 Const fun =() => { return true }
+
 ```
 # Q. String methods
 ```
