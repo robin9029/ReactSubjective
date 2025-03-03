@@ -110,6 +110,94 @@ What is difference and how this will impact code/speed: VAR,GLOBAL- increase the
 Const fun =() => true 
 Const fun =() => { return true }
 ```
+# Q. String methods
+```
+https://www.w3schools.com/js/js_string_methods.asp
+String length
+String charAt(), indexOf(),lastIndexOf()
+String at(), String [ ]
+String slice(),String substring(), String substr()
+
+String toUpperCase(), String toLowerCase()
+String concat(),String trim() ,String trimStart(), String trimEnd()
+String padStart(),String padEnd()
+String repeat()
+String replace(),String replaceAll(), String split()
+https://www.freecodecamp.org/news/javascript-string-tutorial-string-methods-in-js/
+```
+# Q. Array methods
+```
+https://www.w3schools.com/js/js_array_methods.asp
+Array length, Array toString() - string
+Array at()
+Array join()
+Array pop(),Array push() : STACK
+Array shift(), Array unshift() : start Entry /Exit
+Array delete(), Array concat()
+Array copyWithin()
+Array flat(), 
+Array toSpliced()
+Array slice(), Array splice()
+https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/
+```
+# Q. Object Creations: Object creation different techniques
+```
+1 Object Literal: const obj = { key1: value1, key2: value2 };
+2 Constructor Function:
+function Person(name, age) {
+  this.name = name;
+  this.age = age;}
+
+const person = new Person('John', 25);
+
+3 Object.create
+const protoObj = { key1: value1, key2: value2 };
+const obj = Object.create(protoObj);
+4)
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+const returnedTarget = Object.assign(target, source);
+5) Class 
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+const person = new Person('John', 25);
+
+6) Object Constructor 
+
+const obj = new Object();
+obj.key1 = value1;
+obj.key2 = value2;
+6) Factory Methods: 
+function createPerson(name, age) {
+  return {
+    name,
+    age,
+  };
+}
+const person = createPerson('John', 25);
+```
+# Q. Object Display
+```
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+```
+- dot Operator `person.name + "," + person.age + "," + person.city;`
+- Object.values() `const myArray = Object.values(person);`
+- Object.entries()
+```
+let text = "";
+for (let [fruit, value] of Object.entries(fruits)) {
+  text += fruit + ": " + value + "<br>";
+}
+```
+-JSON.stringify() `let myString = JSON.stringify(person);`
 
 # Q and A
 ### Q.1 Add  or Sub
