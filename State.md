@@ -255,3 +255,7 @@ export function Counter() {
 - user Clicks on Increment+ step4
 - step4 dispatch increment Action to step2 via Step1 store
 - store has reducer to be updated
+- access -
+  ```
+  const count = useSelector((state) => state.counter.value);
+  ```
