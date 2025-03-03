@@ -516,6 +516,12 @@ function findNonRepeat(str){
 }
 findNonRepeat(str)
 ```
+```
+for (let i of str){
+    if (str.lastIndexOf(i) == str.indexOf(i)){
+        console.log(i)
+    }}
+```
 ### 22 Find minimum of array = [40,20,30,2,5,6]
 ```
 function findMinimum(arr) {
