@@ -149,7 +149,7 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(mapStateToProps,mapDispatchToProps)(Counter)
 ```
-
+- whatever recived from Action Object - INCREMENT is send to the  Reducer for Update
 # 2. ReduxToolKIT
 - https://blog.logrocket.com/smarter-redux-redux-toolkit/
 - Redux store is too `complicated`,`lot of packages required`,`boilerplate code`
