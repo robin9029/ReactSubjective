@@ -830,16 +830,16 @@ for(const [ele,count1] of Object.entries(count)){
        maxElement= ele
 }
 }	
-console.log(maxElement)  ```
+console.log(maxElement) 
+```
 - OR
-  ```
+```
   let arr= [1,2,2,1,2,3,1]
 undefined
 let count = {}
 for (let i of arr) {
     count[i] ? count[i] += 1 : count[i]= 1
-}
-```
+}```
 ### 31
 ```
 var b = b+1
