@@ -471,8 +471,59 @@ Return () => {}  // this is stop when moving from current component
 },[])
 ```
 ## Q. In CC can we call setState inside Constructor? and BIND
-- Setstate: cannot be called inside constructor because - when object created Constructor fired automatically 
+- Setstate: cannot be called inside constructor because - when object created Constructor fired automatically
+- inside useState can we call API ? yes but its performance issue
 - BIND: data is not used outside the constructor so if you want to use it then Bind this parameter inside constructor
+
+# EP9 Optimizing APP
+### 1)Single responsibility component
+- Modular - Testable, Maintainable ,reusable , Abstract
+- Testing will be easy each component Distributing your code into small pieces
+```
+Eg
+Resturent card- will display only the Resturent
+Header.js- only display Header component 
+```
+### 2)Custom Hooks: readable,modular,reusable, `to make module Single responsibility component`
+- For eg. Resturent card- will display only the Resturent but fetch you can create UseFecth customHook
+- you don’t need manage state inside ResturentCard display
+- useComponent prefix tells reader its customHook where react logic written 
+
+### 3)Make system green or red on online or offline 
+### 4)Bundeling: Dynamic Bundeling ,code splitting, lazy loading, chunking , On Demand Loading 
+- Bundeling - when you build the app all your code bundles to one -JS file, 1- CSS file, 1-HTML file
+- All your application bundled to 1 JS file inside DS once you build but as size grows its time taking to load application 
+`So you need to bundle it based on logic`
+```
+Eg MakemYtrip
+1 Bundle- Logical bundle - has all flight  JS
+1 Bundle- Logical bundle - has all Hotel  JS
+1 Bundle- Logical bundle - has all Train  JS
+1 Bundle- Logical bundle - has all BUS  JS
+
+Const Hotel= lazy(()=>import(‘ ../Hotel’))
+This will create separate Logical bundle - has all Hotel  JS in DIS folder once you click on hotel
+```
+### 4)Suspence 
+```
+Once you click on Hotel this code is not available 
+It renders but since code is not available it will render and throw error 
+You can wrap you component to <Suspence><Hotel/><Suspence/> 
+ OR
+<Suspence fallback={<h1>Loading…. </h1>}><Hotel/><Suspence/>
+```
+```
+ {
+        path: '/grocery',
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
+      },
+```
+![Screenshot 2025-03-10 at 4 58 27 PM](https://github.com/user-attachments/assets/319eb10c-ab21-4baf-a5f0-5a0e7e0dbcad)
+
 
 ## Q. Babel ?
 - Babel: toolchain - ECMA 2015 convert backward compatible version of JS in current or Older version browser 
