@@ -1594,7 +1594,7 @@ Here's your latest set of questions grouped appropriately:
 ---
 
 Feel free to let me know if you'd like deeper explanations or have more questions! 😊
-#21
+# 21
 Here’s the grouping of your latest questions, categorized as per their topics:
 
 ---
@@ -1667,7 +1667,7 @@ Here’s the grouping of your latest questions, categorized as per their topics:
 ---
 
 Let me know if you’d like elaboration on any topic or additional content! 😊
-#22
+# 22
 Here’s the grouping of your latest questions, keeping everything unmodified as you provided:
 
 ---
@@ -1761,7 +1761,7 @@ Here’s the grouping of your latest questions, keeping everything unmodified as
 
 Let me know if you’d like further explanation or more examples! 😊
 
-#23
+# 23
 Here’s your latest set of questions, grouped under appropriate topics:
 
 ---
@@ -1839,7 +1839,7 @@ Here’s your latest set of questions, grouped under appropriate topics:
 
 Let me know if you need clarification or examples for any of these! 😊
 
-#24
+# 24
 Here’s how your questions are categorized based on the specified topics:
 
 ---
@@ -1928,7 +1928,7 @@ Here’s how your questions are categorized based on the specified topics:
 
 Let me know if you’d like elaboration on any of the points or additional examples! 😊
 
-#25
+# 25
 Here’s your latest set of questions categorized under the specified topics:
 
 ---
@@ -2104,7 +2104,7 @@ Here’s your latest set of questions categorized under the specified topics:
 ---
 
 Let me know if you’d like more elaboration on any point or additional examples! 😊
-#26
+# 26
 Here's your provided information categorized under the appropriate topics:
 
 ---
@@ -2298,7 +2298,7 @@ Here's your provided content categorized under the specified topics:
 Let me know if you'd like to dive deeper into any of the topics or examples! 😊
 
 
-#27
+# 27
 Here’s the categorization of your provided content:
 
 ---
@@ -2427,7 +2427,7 @@ Here’s the categorization of your provided content:
 
 Let me know if you need additional clarifications or examples! 😊
 
-#28
+# 28
 Here's your code snippets and explanations categorized for clarity:
 
 ---
@@ -2526,7 +2526,7 @@ Here's your code snippets and explanations categorized for clarity:
 
 Let me know if you need clarification or additional tweaks for any snippets! 😊
 
-#29
+# 29
 Here’s your content categorized and explained:
 
 ---
@@ -2568,7 +2568,7 @@ Here’s your content categorized and explained:
      - **Strict Mode Updates**: Adds additional checks and warnings during development.
 
 Let me know if you'd like further elaboration or examples! 😊
-#30
+# 30
 
 Here’s your content organized under relevant topics:
 
@@ -2823,7 +2823,7 @@ Here's your information grouped and elaborated upon under relevant categories:
 ---
 
 Feel free to ask for clarification or further elaboration on any of the topics! 😊
-#32
+# 32
 Here’s your content grouped and explained under relevant topics:
 
 ---
@@ -3059,3 +3059,176 @@ Here’s your content grouped and explained under relevant topics:
 ---
 
 Let me know if you'd like deeper clarifications or further examples! 😊
+
+# 33
+Here’s your content organized under appropriate categories with explanations:
+
+---
+
+### **JavaScript/TypeScript**
+1. **Output using Closure**:
+   ```javascript
+   function count() {
+       let num = 0; // Variable is shared between all calls
+       return () => ++num;
+   }
+   const counter = count();
+   console.log(counter()); // Output: 1
+   console.log(counter()); // Output: 2
+   console.log(counter()); // Output: 3
+   ```
+
+2. **Memory Leakage**:
+   - **Example:**
+     ```javascript
+     function createLeak() {
+         let largeArray = new Array(1000000).fill("leak");
+         return function() {
+             console.log(largeArray.length);
+         };
+     }
+     let leakyFunction = createLeak();
+     leakyFunction(); // Output: 1000000
+     ```
+   - **Leakage Type**: Closure holds reference to `largeArray`, preventing garbage collection.
+   - **Solution**: Set closure variable to `null`:
+     ```javascript
+     leakyFunction = null; // Removes reference and allows garbage collection
+     ```
+
+3. **Inheritance in ES5**:
+   ```javascript
+   let car = { engine: true };
+   let bus = Object.create(car);
+   console.log(bus.engine); // Output: true
+   ```
+
+4. **Push Multiple Items to Array**:
+   - Yes, you can push multiple items:
+     ```javascript
+     let arr = [1, 2, 3, 4, 5];
+     arr.push(6, null); 
+     console.log(arr); // Output: [1, 2, 3, 4, 5, 6, null]
+     ```
+
+5. **What is Promise?**:
+   - An object that represents the eventual completion or failure of an asynchronous operation.
+   - **Convert Function to Promise**:
+     ```javascript
+     const asyncFunction = (input) => new Promise((resolve, reject) => {
+         if (input) {
+             resolve("Success");
+         } else {
+             reject("Failure");
+         }
+     });
+     asyncFunction(true).then(console.log).catch(console.error);
+     ```
+
+---
+
+### **React JS**
+1. **Data Passing from Child to Parent**:
+   - Use callback or Redux:
+     ```javascript
+     const Child = ({ updateParent }) => {
+         return <button onClick={() => updateParent("Data from Child")}>Send Data</button>;
+     };
+     const Parent = () => {
+         const handleUpdate = (data) => console.log(data);
+         return <Child updateParent={handleUpdate} />;
+     };
+     ```
+
+2. **Next.js - Server Side Rendering**:
+   - Next.js automatically handles SSR for better SEO. Use `getServerSideProps` for fetching data at request time.
+
+3. **Infinite Scrolling with Socket**:
+   ```javascript
+   import { useEffect, useState } from "react";
+
+   const LiveScores = () => {
+       const [scores, setScores] = useState([]);
+
+       useEffect(() => {
+           const socket = new WebSocket("wss://example.com/scores");
+           socket.onmessage = (event) => {
+               setScores((prev) => [...prev, JSON.parse(event.data)]);
+           };
+           return () => socket.close(); // Cleanup
+       }, []);
+
+       return scores.map((score, index) => <p key={index}>{score}</p>);
+   };
+   ```
+
+---
+
+### **CSS**
+1. **Pseudo Class**:
+   - Applies styles to elements based on their state:
+     ```css
+     a:hover {
+         color: red;
+     }
+     ```
+
+2. **Specificity**:
+   - **Order of Importance**: Inline styles > ID selectors > Class selectors > Element selectors.
+   - Example:
+     ```html
+     <div id="unique" class="class" style="color: red;">Text</div>
+     ```
+
+3. **CSS Pre-Processors**:
+   - **Example with Variables**:
+     ```scss
+     $primary-color: #3498db;
+
+     .button {
+         background-color: $primary-color;
+     }
+     ```
+
+4. **Display `none` vs Invisible**:
+   - **`display: none;`**: Element is removed from layout.
+   - **`visibility: hidden;`**: Element remains in layout but is invisible.
+
+5. **Flexbox vs Grid**:
+   - **Flexbox**: Single-direction layout (row or column).
+   - **Grid**: Two-dimensional layout (rows and columns).
+
+---
+
+### **SQL**
+1. **Query Optimization**:
+   - Use indexing to speed up lookups.
+   - Avoid `SELECT *`, specify required columns.
+   - Optimize joins and reduce subqueries.
+
+---
+
+### **Tools and CI/CD**
+1. **ESLint for PR Review**:
+   - Commands to identify errors:
+     ```bash
+     npx eslint . --format stylish            # All files
+     npx eslint src/App.js --format stylish  # Specific file
+     npx eslint . -f json -o eslint-report.json # Generate report
+     npx eslint . --quiet                   # Only errors
+     ```
+
+2. **SonarQube and Jenkins**:
+   - SonarQube: Code quality and security analysis.
+   - Jenkins: Automates CI/CD pipelines.
+
+3. **CI/CD Steps**:
+   - Example in GitHub Actions:
+     ```yaml
+     - name: Run ESLint
+       run: npx eslint . --max-warnings=0
+     ```
+
+---
+
+Let me know if you’d like elaborations or additional examples! 😊
