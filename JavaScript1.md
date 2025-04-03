@@ -822,4 +822,140 @@ console.log(count);
     console.log([...new Set(numbers)].sort((a, b) => a - b)); // [2, 4, 5]
     ```
 
----
+### ** Frequntly asked  JavaScript and TypeScript Concepts**
+
+1. **Scope of `var`, `let`, and `const`**  
+   - Temporal Dead Zone: Time between variable memory allocation and initialization.
+
+2. **Callback Hell**  
+   - Synchronous vs Asynchronous programming and its relation to callbacks.
+
+3. **Promise**  
+   - Representation of eventual completion or failure of an asynchronous operation.  
+   - Fetch data using `Promise.all()` and `map`.  
+   - Custom promise example to resolve or reject based on a condition.  
+   - Comparison: Promise vs Async/Await.  
+   - `Promise.all()` fetch API works for parallel execution, but using `Promise.allSettled()` can handle both resolved and rejected promises gracefully.
+
+   ```javascript
+   Promise.allSettled([fetch(url1), fetch(url2)]).then((responses) => {
+       responses.forEach((res) => console.log(res.status));
+   });
+   ```
+
+
+4. **Closure**  
+   - Functions with lexical scope that remember their parent function's data and variables.
+
+5. **`this` Keyword**  
+   - Behavior depends on how it is called.  
+
+6. **Object Creation Techniques**  
+   - Using `Object.assign`, `Object.create`, and prototypes.  
+   - Display keys of an object.
+   - `Object.create` is preferable for prototypal inheritance. Clarify "polyfill" as an implementation that replicates modern functionality in older environments:
+     ```javascript
+     if (!Object.create) {
+         Object.create = function(proto) {
+             function F() {}
+             F.prototype = proto;
+             return new F();
+         };
+     }
+     ```
+
+7. **`setTimeout` and `setInterval`**  
+   - Use with `clearInterval` for stopping intervals.
+
+8. **Call, Apply, Bind**  
+   - Passing objects to functions and practical usage.
+
+9. **Event Loop**  
+   - Mechanisms: Call stack, Microtask queue, Callback queue.  
+   - Optimization strategies - starvation using timeout
+   - Include Priority Handling: Microtasks (Promise, Mutation Observer) are executed before Macrotasks (setTimeout, setInterval).
+
+10. **Cookies vs Local Storage vs Session Storage**  
+
+11. **Event Handling**  
+   - Delegation, Propagation, Immediate Propagation, Bubbling, Looping.  
+   - ED propagates CBI
+
+12. **ES6 Standards**  
+   - Features: Template literals, spread/rest operators, destructuring, arrow functions, promises, `let`, `const`, and classes.
+
+13. **Progressive Web App (PWA)**  
+   - Offline support using service workers.  
+   - Web accessibility standards (AA/AAA compliance).
+
+14. **Interceptors** 
+- Expand: Interceptors are middleware (used in Axios) to intercept requests and responses for logging, modifying, or handling errors:
+      ```javascript
+      axios.interceptors.request.use((config) => {
+          console.log("Request sent", config);
+          return config;
+      });
+      ```
+
+
+15. **Generator Functions**  
+   - Use of `yield`, execution pauses and resumes on `next`.  
+
+16. **Deep Copy**  
+   - Example: `JSON.parse(JSON.stringify(nestedObject))`.
+
+17. **Event Currying**  
+   - Transform functions into callable forms by splitting arguments.  
+   - Partial function applications.
+
+18. **Memory Leakage**  
+   - Detection using Chrome DevTools memory profiler.  
+   - Avoid global variables.
+   - Avoid circular references to prevent leaks. Example:
+      ```javascript
+      const circularObj = {};
+      circularObj.self = circularObj; // Break reference by assigning null
+      ```
+
+
+19. **Declarative vs Imperative Programming**  
+   - JavaScript supports both paradigms.
+
+20. **Map Object vs Regular Object**  
+    - Clarify Map Object benefits:
+    - Map maintains order of insertion, accepts any key type, and is iterable.
+      ```javascript
+      const map = new Map();
+      map.set(1, "one");
+      console.log(map.get(1)); // Output: "one"
+      ```
+
+
+21. **Global Keys**  
+   - Payment/gateway keys stored as `const` (block-scoped) or `var` (global-scoped).
+
+22. **Preventing Textbox Trigger Render**  
+   - Debouncing and throttling techniques.  
+   - Use `preventDefault()` to stop browser reload.
+   - De-bouncing - search is commonly used for scenarios like search input fields
+   - Throttling is commonly used for scenarios like handling scroll events
+
+23. **OOP Concepts**  
+   - Polymorphism, abstraction, encapsulation, inheritance, and the use of `super`.
+
+24. **Class vs Function**  
+   - Constructors in classes vs initial state in functions.  
+   - TypeScript: Classes vs interfaces.
+
+25. **Regular Functions vs Arrow Functions**  
+   - Features of arrow functions: compact, inherits `this` from outer context, not usable as a constructor.
+
+26. **Map vs ForEach**  
+   - Map: Returns a new array, supports chaining.  
+   - ForEach: Executes a callback for each element, does not return a new array.
+
+27. **Async to Sync**  
+   - Remove callback functions and directly invoke functions.
+
+28. **Web Workers**  
+   - Separate threads for complex calculations to improve performance.  
