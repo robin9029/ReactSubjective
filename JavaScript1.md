@@ -48,6 +48,8 @@
   var x = (a) => (b) => a * b;
   console.log(x(2)(3)); // Output: 6
   ```  
+  - Converting a function with multiple arguments into a series of functions, each taking one argument.
+   
 - **Number Digit Sum until Single Digit?**  
   ```js
   function convertSingleDigit(n) {
@@ -239,12 +241,6 @@ console.log(count);
      myPromise.then(console.log).catch(console.error);
      ```
 
-4. **Function Currying**:
-   - Converting a function with multiple arguments into a series of functions, each taking one argument.
-     ```javascript
-     const curriedMultiply = (a) => (b) => a * b;
-     console.log(curriedMultiply(2)(3)); // Output: 6
-     ```
 
 #### **Arrays and Objects**
 5. **Unique Elements in an Array**:
@@ -613,12 +609,7 @@ console.log(count);
      myPromise.then(console.log).catch(console.error);
      ```
 
-10. **Currying Functions**:
-    - Breaking functions into smaller functions taking single arguments:
-      ```javascript
-      const multiply = (a) => (b) => a * b;
-      console.log(multiply(2)(3)); // Output: 6
-      ```
+
 
 ---
 
