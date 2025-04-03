@@ -1,9 +1,8 @@
-### **4) JavaScript, TypeScript**  
+### ** JavaScript, TypeScript**  
   - `"A" - "B" = NaN`  
   - `"2" - "2" = 0`  
 - `"2" + 2 = "22"`  
-- **Event loop?** → Call stack, callback queue, Microtask queue (priority-based), provided by browser runtime/Node runtime.  
-- **Promise & setTimeout: Which one executes first?** → Promise, because it runs on the Microtask queue.  
+- **Event loop?** → Call stack, callback queue, Microtask queue (priority-based), provided by browser runtime/Node runtime.   
 - **Prototypes?** → Default constructor, default object created, prototype chain leads to `null`.  
 - **`this` keyword?** → Behaves differently in function/global scope, arrow function points to the parent object, strict mode refers to `undefined`, event refers to the element.
 - **JS?** → Used for creating interactive UI applications.  
@@ -17,6 +16,9 @@
   - `var` supports hoisting → initialized as `undefined` before declaration.  
   - `let` & `const` → Reference error if used before declaration.  
   - `const` has block scope and holds a constant reference (objects/arrays can be modified).  
+      - Variables declared with `var` are hoisted and initialized with `undefined`.  
+      - `let` and `const` are hoisted but not initialized (temporal dead zone).
+
 - **Spread operator?** → Used to update objects. Example:  
   ```js
   const student = { name: 'ravi', place: 'Sahibganj', age: 33 };
@@ -70,8 +72,7 @@
   function demo(name, age, ...rest) {
       console.log(rest);
   }
-  ```  
-- **Palindrome Check?** → Use `.reverse()` to compare original and reversed strings.  
+  ```   
 - **Reverse Function in JavaScript?**  
   ```js
   function reverseString(str) {
@@ -79,10 +80,7 @@
   }
   console.log(reverseString("abcba")); // Output: abcba
   ```  
-- **Shallow Copy vs Deep Copy?**  
-  - **Shallow Copy** → Copies references (`=` assignment).  
-  - **Deep Copy** → Creates a completely new copy (e.g., `JSON.parse(JSON.stringify(obj))`).  
-- **Closures?** → Functions that remember variables from their lexical scope.  
+
 - **`map` vs `reduce`?**  
   - `map`: Transforms each element in an array.  
   - `reduce`: Accumulates values using an accumulator and current value.  
@@ -636,6 +634,14 @@ console.log(count);
           }
       });
       ```
+    - ED Propagates CBI
+    - ED -a technique that allows you to listen for events on a parent element` always attacks on TOP- parent`
+    - EP- Propagation : Event DOM main kise travel karega 2 types top-down and vice versa
+        - CP(Capturing Phase)- The event starts from the root and moves down to the target element.`TOP down approach `
+        - Bubbling Phase: The event starts from the target element and moves up to the root. ` DOWN to TOP `
+    - Immediate Propagation: allows us to prevent other event listeners on the same element
+        ` same button has multiple event listeners & want to stop some of of the event of buttion ` 
+
 
 13. **Deleting Object Keys**:
     ```javascript
@@ -643,10 +649,6 @@ console.log(count);
     delete obj.age;
     console.log(obj); // { name: "John" }
     ```
-
-14. **Hoisting**:
-    - **`var`**: Hoisted and initialized with `undefined`.
-    - **`let`/`const`**: Hoisted but not initialized (Temporal Dead Zone).
 
 15. **Generics for Reusability**:
     - Example in TypeScript:
@@ -673,7 +675,10 @@ console.log(count);
      ```javascript
      const deepCopy = JSON.parse(JSON.stringify(target));
      ```
-
+- **Shallow Copy vs Deep Copy?**  
+  - **Shallow Copy** → Copies references (`=` assignment).  
+  - **Deep Copy** → Creates a completely new copy (e.g., `JSON.parse(JSON.stringify(obj))`).  
+ 
 2. **Object Key Access and Null Filtering**:
    ```javascript
    const obj = { name: "John", age: 30, greet: () => "Hi", emptyKey: null };
@@ -803,12 +808,6 @@ console.log(count);
     ```
 
 #### **Other Applications**
-13. **Event Delegation**:
-    ```javascript
-    document.getElementById("parent").addEventListener("click", (e) => {
-        if (e.target.tagName === "BUTTON") console.log("Button clicked");
-    });
-    ```
 
 14. **Check for Integer Without `typeof`**:
     ```javascript
@@ -822,3 +821,5 @@ console.log(count);
     const numbers = [4, 2, 2, 5, 5];
     console.log([...new Set(numbers)].sort((a, b) => a - b)); // [2, 4, 5]
     ```
+
+---
