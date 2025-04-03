@@ -822,7 +822,7 @@ console.log(count);
     console.log([...new Set(numbers)].sort((a, b) => a - b)); // [2, 4, 5]
     ```
 
-### ** Frequntly asked  JavaScript and TypeScript Concepts**
+### **Frequntly asked  JavaScript and TypeScript Concepts**
 
 1. **Scope of `var`, `let`, and `const`**  
    - Temporal Dead Zone: Time between variable memory allocation and initialization.
@@ -959,3 +959,6 @@ console.log(count);
 
 28. **Web Workers**  
    - Separate threads for complex calculations to improve performance.  
+29.  **HOC & Pure Function**
+   - HOC - accept function and return function MAP, reduce
+   - Pure function does nothing just executes eg. reducer
