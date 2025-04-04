@@ -82,6 +82,7 @@ app.get("/", (req, res) =>
 ```
 ### Cluster  works on round robin Algo 1-1,2-2
 - clusters of Node.js processes can be used to run multiple instances of Node.js that can distribute workloads among their application threads
+- - What is cluster - when resource is fully occupied we use cluster
 ```
 const cluster = require('node:cluster');
 const express = require('express')
@@ -112,24 +113,210 @@ app.listen(port, () => {
   console.log(`Worker ${process.pid} started`);
 }
 ```
--  Load balancer
--  Call one api Inside that  two api calls Concatenate two api response and Send back to api
--  What is process 
-- 2 node server and api request hitting server 1 if more capacity then it should redireact to 2nd server? how
-  - horizontal some cluster type , vertical or load balancer
--  If we want to import one variable from package how can we do it - Eg axios install, them import and use it
+### Load balancer
+### Calld one api Inside that,  two api calls Concatenate two api response and Send back to api
+```
+const express = require("express");
+const axios = require("axios");
+
+const app = express();
+
+app.get("/combined-api", async (req, res) => {
+    try {
+        // Call two external APIs in parallel
+        const [response1, response2] = await Promise.all([
+            axios.get("https://jsonplaceholder.typicode.com/posts/1"),  // First API
+            axios.get("https://jsonplaceholder.typicode.com/users/1")   // Second API
+        ]);
+
+        // Combine responses
+        const combinedResponse = {
+            post: response1.data,
+            user: response2.data
+        };
+
+        res.json(combinedResponse); // Send back the combined response
+    } catch (error) {
+        res.status(500).json({ error: "Error fetching data" });
+    }
+});
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
+
+```
+### What is process 
+### 2 node server and api request hitting server 1 if more capacity then it should redireact to 2nd server? how
+- horizontal some cluster type , vertical or load balancer
+- httpProxy.createProxyServer()
+- ngnix
+```
+    http {
+    upstream backend_servers {
+        server 127.0.0.1:3000;  # Server 1
+        server 127.0.0.1:4000;  # Server 2
+    }
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://backend_servers;
+        }
+    }
+}
+```
+
+### If we want to import one variable from package how can we do it - Eg axios install, them import and use it
+``` Default
+const myVar = "Hello from myModule!";
+module.exports = myVar;
+Importing in Another File
+
+const myVar = require("./myModule");
+console.log(myVar);  // Output: Hello from myModule!
+```
+``` Named
+export const myVar = "Hello from myModule!";
+Importing in Another File (app.mjs)
+
+import { myVar } from "./myModule.mjs";
+console.log(myVar);  // Output: Hello from myModule!
+```
 - Event loop in node js
-- What is cluster - when resource is fully occupied we use cluster
 - Architecture of node js
 - Reactor pattern ? used for de multiplexer input output operation
-- Middleware in node js- https
+- Middleware in node js- https,express - next(), authentication etc 
 - Libuv library in node js
-- Error first callback
-- What is thread pool and which library handles thread pool
-- If I upload 1gb in nodesjs how do you handle it - express-upload-post request and check the file sizeHow do handle If you use read Stream for 1 gb
-- Middle wehre used Can http accept req bodyUser
-- hit our api 5 per sec how do you handle it- request we get incremental value ,
-  -  so if every request is new how to get incremental value- socket can be used
+### Error first callback takes two argument (error, data) - if data return data else error
+```
+const fs = require("fs");
+
+// This file exists
+const file = "file.txt";
+
+// Error first callback
+// function with two
+// arguments error and data
+const ErrorFirstCallback = (err, data) => {
+if (err) {
+	return console.log(err);
+}
+console.log("Function successfully executed");
+console.log(data.toString());
+};
+
+// function execution
+// This will return
+// data object
+fs.readFile(file, ErrorFirstCallback);
+
+```
+  
+### What is thread pool and which library handles thread pool - liBUV
+- Thread Pool is a group of worker threads used to execute tasks asynchronously in Node.js
+- libuv is the C++ library used internally by Node.js to manage asynchronous I/O and thread pooling.
+  
+### If I upload 1gb in nodesjs how do you handle it - express-upload request and check the file sizeHow do handle If you use read Stream for 1 gb
+-Limitation:  this is not recomended : express-fileupload
+```
+const fileUpload = require("express-fileupload");
+
+const app = express();
+
+// Middleware for file upload with size limit (1GB)
+app.use(fileUpload({
+    limits: { fileSize: 1024 * 1024 * 1024 }, // 1GB limit
+}));
+
+app.post("/upload", (req, res) => {
+    if (!req.files || !req.files.file) {
+        return res.status(400).send("No file uploaded.");
+    }
+
+    const file = req.files.file;
+    
+    if (file.size > 1024 * 1024 * 1024) {  // Extra size check (1GB)
+        return res.status(400).send("File is too large.");
+    }
+
+    file.mv(`./uploads/${file.name}`, (err) => {
+        if (err) return res.status(500).send(err);
+        res.send("File uploaded successfully.");
+    });
+});
+```
+- Use Readable Streams (Best for Large Files)
+  - multer
+  - createWriteStream
+    
+
+- Middle where used can http accept req bodyUser
+### hit our api 5 per sec how do you handle it- request we get incremental value ,
+-  so if every request is new how to get incremental value- socket can be used
+-  Limit request rate (Rate Limiting) : express-rate-limit
+- Track incremental values per request
+- Use WebSockets if you need real-time updates
+```
+const express = require("express");
+const { WebSocketServer } = require("ws");
+
+const app = express();
+const PORT = 3000;
+
+// Create an HTTP server with Express
+const server = app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
+// Attach WebSocket Server to Express
+const wss = new WebSocketServer({ server });
+
+let counter = 0;
+
+// Handle WebSocket Connections
+wss.on("connection", (ws) => {
+    console.log("Client connected");
+
+    const interval = setInterval(() => {
+        counter++; // Incremental value
+        ws.send(JSON.stringify({ requestNumber: counter }));
+    }, 200); // Every 200ms = 5 times per second
+
+    ws.on("close", () => {
+        clearInterval(interval);
+        console.log("Client disconnected");
+    });
+});
+
+// Express Route for Testing
+app.get("/", (req, res) => {
+    res.send("WebSocket server is running!");
+});
+```
+``` Clinet
+const socket = new WebSocket("ws://localhost:3000");
+
+socket.onmessage = (event) => {
+    console.log("Incremental Value:", JSON.parse(event.data));
+};
+
+```
+
+### How many task you can allocate to number of thread-depends on system cpu core if 8 max 8 thread can be allowed ? 
+#### If you have more than 8 How to handle?  Lets say two is wating 
+  - Swap Long-Running Tasks: worker.terminate()
+  - Cancel & Reassign Tasks Dynamically
+  - Task Queue with Priority Scheduling
+    
+#### If two of the core failed How you handle ?
+1️⃣ Detect Core Failures – Monitor CPU usage & process failures
+2️⃣ Redistribute Work – Shift tasks to available cores
+3️⃣ Restart Failed Workers – Use process managers like PM2
+4️⃣ Load Balancing – Use external balancers (Nginx, HAProxy, Kubernetes)
+
 
 ## Js 
 - Cyclic rotation arrayArray [1234]Output [3412]
@@ -197,6 +384,3 @@ eg fun(){}()
 - Node architecture ?
 
 - How multithreading works?
-- How many task you can allocate to number of thread-depends on system cpu core if 8 max 8 thread can be allowed ?
-- If you have more than 8 How to handle? 
-- If two of the core failed How you handle ?
