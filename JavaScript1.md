@@ -49,6 +49,29 @@
   console.log(x(2)(3)); // Output: 6
   ```  
   - Converting a function with multiple arguments into a series of functions, each taking one argument.
+
+  ```
+   function curry(f) { // curry(f) does the currying transform
+  return function(a) {
+    return function(b) {
+      return f(a, b);
+    };
+  };}
+```
+// usage
+function sum(a, b) {
+  return a + b;
+}
+let carriedSum = curry(sum);
+
+alert( carriedSum(1)(2) ); // 3
+
+```
+
+- As you can see, the implementation is a series of wrappers.
+- The result of curry(func) is a wrapper function(a).
+- When it is called like sum(1), the argument is saved in the Lexical Environment, and a new wrapper is returned function(b).
+- Then sum(1)(2) finally calls function(b) providing 2, and it passes the call to the original multi-argument sum.
    
 - **Number Digit Sum until Single Digit?**  
   ```js
