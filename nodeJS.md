@@ -1,6 +1,64 @@
 
--  nodejs - how to send html
+## nodejs - how to send html
+  ```
+app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
+    res.render("index", { title: "Home Page" });
+});
+```
+```
+app.get("/", (req, res) => {
+    res.send("<h1>Welcome to My Website</h1>");
+});
+```
+```
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+```
 -  create server
+```
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+OR
+ res.status(200).send("Hello, world!");
+
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+```
+
+```
+Without express 
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  // Routing
+  if (req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, world!');
+  } else if (req.url === '/about') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('About page');
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Page not found');
+  }
+});
+
+const port = 3000;
+server.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
+```
+
 -  Socket
 -  Stream
 -  Load balancer
@@ -86,6 +144,7 @@ eg fun(){}()
 - https://gist.github.com/paulfranco/9f88a2879b7b7d88de5d1921aef2093b
 
 - Node architecture ?
+
 - How multithreading works?
 - How many task you can allocate to number of thread-depends on system cpu core if 8 max 8 thread can be allowed ?
 - If you have more than 8 How to handle? 
