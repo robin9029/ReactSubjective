@@ -320,6 +320,15 @@ socket.onmessage = (event) => {
 3️⃣ Restart Failed Workers – Use process managers like PM2
 4️⃣ Load Balancing – Use external balancers (Nginx, HAProxy, Kubernetes)
 
+## if  blocking operation runs on main thread and taking more time how will you handle it in node js ?
+## **🔥 Which Solution Should You Use?**
+| **Scenario** | **Best Solution** |
+|-------------|------------------|
+| CPU-heavy task (encryption, ML, parsing) | **Worker Threads** |
+| Running external scripts or processes | **Child Processes** |
+| Large file processing (uploads, logs) | **Streams** |
+| Background jobs (email, notifications) | **Bull.js (Job Queue)** |
+
 
 ## Js 
 - Cyclic rotation arrayArray [1234]Output [3412]
