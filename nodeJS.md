@@ -80,6 +80,38 @@ app.get("/", (req, res) =>
   stream.on ("data", (chunk) => res.write (chunk)) :              // when data comes write to response in chunk 
   stream. on ("end",() => res.end ()) }):   // stream ends stop the response
 ```
+### Cluster  works on round robin Algo 1-1,2-2
+- clusters of Node.js processes can be used to run multiple instances of Node.js that can distribute workloads among their application threads
+```
+const cluster = require('node:cluster');
+const express = require('express')
+const os = require('os').availableParallelism();
+const process = require('node:process');
+
+Const numCPUs= os.cpus.length()
+
+if (cluster.isPrimary) {
+  console.log(`Primary ${process.pid} is running`);
+
+  // Fork workers.
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
+} else {
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+  console.log(`Worker ${process.pid} started`);
+}
+```
 -  Load balancer
 -  Call one api Inside that  two api calls Concatenate two api response and Send back to api
 -  What is process 
