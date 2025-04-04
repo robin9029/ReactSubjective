@@ -1312,3 +1312,26 @@ async function asyncTask() {
 
 ![Screenshot 2025-02-23 at 10 09 33 AM](https://github.com/user-attachments/assets/ebec0e86-788d-41d6-a34d-a50c7774607d)
 
+### 53  how to inherit car.engine inside bus 
+```
+let car = {
+  engine: true
+};
+let bus = {
+  color: true
+};
+console.log(bus[car.engine])
+```
+- Object.create
+```
+let bus =Object.create(car);
+bus.color= 'red'
+console.log(bus.engine)   // true 
+console.log(bus.color)    // red
+```
+- Or prototype-based inheritance(Object.assign )
+```
+let bus = Object.assign({}, car, color:'red')
+console.log(bus.engine)   // true 
+console.log(bus.color)    // red
+```
