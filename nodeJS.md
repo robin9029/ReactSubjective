@@ -60,7 +60,26 @@ server.listen(port, () => {
 ```
 
 -  Socket
--  Stream
+## Stream
+
+- when ask to read 50MB data it usess 400 to read if 100 users it will crash so read it in chunks
+- We created pipeline - the time data comes , we stream to front end in chunks 
+
+```
+const fs = require('fs');
+const readStream  = fs.createReadStream('/read.txt');
+
+readStream.on('data', (chunk)= > {
+   console.log(chunk);
+});
+```
+
+```
+app.get("/", (req, res) =>
+  const stream = fs.createReadStream("./sample.txt", "utf-g"):  // read stream 
+  stream.on ("data", (chunk) => res.write (chunk)) :              // when data comes write to response in chunk 
+  stream. on ("end",() => res.end ()) }):   // stream ends stop the response
+```
 -  Load balancer
 -  Call one api Inside that  two api calls Concatenate two api response and Send back to api
 -  What is process 
