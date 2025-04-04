@@ -1,24 +1,24 @@
 
 ## nodejs - how to send html
-  ```
-app.set("view engine", "ejs");
+```javascript
 
+app.set("view engine", "ejs");
 app.get("/", (req, res) => {
     res.render("index", { title: "Home Page" });
 });
 ```
-```
+```javascript
 app.get("/", (req, res) => {
     res.send("<h1>Welcome to My Website</h1>");
 });
 ```
-```
+```javascript
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 ```
 -  create server
-```
+```javascript
 const express = require('express')
 const app = express()
 const port = 3000
@@ -35,8 +35,8 @@ app.listen(port, () => {
 })
 ```
 
-```
-Without express 
+```javascript
+//Without express 
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -65,7 +65,7 @@ server.listen(port, () => {
 - when ask to read 50MB data it usess 400 to read if 100 users it will crash so read it in chunks
 - We created pipeline - the time data comes , we stream to front end in chunks 
 
-```
+```javascript
 const fs = require('fs');
 const readStream  = fs.createReadStream('/read.txt');
 
@@ -74,7 +74,7 @@ readStream.on('data', (chunk)= > {
 });
 ```
 
-```
+```javascript
 app.get("/", (req, res) =>
   const stream = fs.createReadStream("./sample.txt", "utf-g"):  // read stream 
   stream.on ("data", (chunk) => res.write (chunk)) :              // when data comes write to response in chunk 
@@ -83,7 +83,7 @@ app.get("/", (req, res) =>
 ### Cluster  works on round robin Algo 1-1,2-2
 - clusters of Node.js processes can be used to run multiple instances of Node.js that can distribute workloads among their application threads
 - - What is cluster - when resource is fully occupied we use cluster
-```
+```javascript
 const cluster = require('node:cluster');
 const express = require('express')
 const os = require('os').availableParallelism();
@@ -115,7 +115,7 @@ app.listen(port, () => {
 ```
 ### Load balancer
 ### Calld one api Inside that,  two api calls Concatenate two api response and Send back to api
-```
+```javascript
 const express = require("express");
 const axios = require("axios");
 
@@ -170,7 +170,8 @@ app.listen(PORT, () => {
 ```
 
 ### If we want to import one variable from package how can we do it - Eg axios install, them import and use it
-``` Default
+```javascript
+//Default
 const myVar = "Hello from myModule!";
 module.exports = myVar;
 Importing in Another File
@@ -178,7 +179,8 @@ Importing in Another File
 const myVar = require("./myModule");
 console.log(myVar);  // Output: Hello from myModule!
 ```
-``` Named
+```javascript
+//Named
 export const myVar = "Hello from myModule!";
 Importing in Another File (app.mjs)
 
@@ -191,7 +193,7 @@ console.log(myVar);  // Output: Hello from myModule!
 - Middleware in node js- https,express - next(), authentication etc 
 - Libuv library in node js
 ### Error first callback takes two argument (error, data) - if data return data else error
-```
+```javascript
 const fs = require("fs");
 
 // This file exists
@@ -221,7 +223,7 @@ fs.readFile(file, ErrorFirstCallback);
   
 ### If I upload 1gb in nodesjs how do you handle it - express-upload request and check the file sizeHow do handle If you use read Stream for 1 gb
 -Limitation:  this is not recomended : express-fileupload
-```
+```javascript
 const fileUpload = require("express-fileupload");
 
 const app = express();
@@ -259,7 +261,7 @@ app.post("/upload", (req, res) => {
 -  Limit request rate (Rate Limiting) : express-rate-limit
 - Track incremental values per request
 - Use WebSockets if you need real-time updates
-```
+```javascript
 const express = require("express");
 const { WebSocketServer } = require("ws");
 
@@ -296,7 +298,8 @@ app.get("/", (req, res) => {
     res.send("WebSocket server is running!");
 });
 ```
-``` Clinet
+```javascript
+// Clinet
 const socket = new WebSocket("ws://localhost:3000");
 
 socket.onmessage = (event) => {
