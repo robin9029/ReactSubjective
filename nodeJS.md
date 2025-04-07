@@ -174,16 +174,16 @@ app.listen(PORT, () => {
 //Default
 const myVar = "Hello from myModule!";
 module.exports = myVar;
-Importing in Another File
 
+//Importing in Another File
 const myVar = require("./myModule");
 console.log(myVar);  // Output: Hello from myModule!
 ```
 ```javascript
 //Named
 export const myVar = "Hello from myModule!";
-Importing in Another File (app.mjs)
 
+//Importing in Another File (app.mjs)
 import { myVar } from "./myModule.mjs";
 console.log(myVar);  // Output: Hello from myModule!
 ```
