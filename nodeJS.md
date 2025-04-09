@@ -82,7 +82,10 @@ app.get("/", (req, res) =>
 ```
 ### Cluster  works on round robin Algo 1-1,2-2
 - clusters of Node.js processes can be used to run multiple instances of Node.js that can distribute workloads among their application threads
-- - What is cluster - when resource is fully occupied we use cluster
+- What is cluster - when resource is fully occupied we use cluster
+  - if primary Cluster : create Fork
+  - else run your Express server
+  - cluster.fork() : creates a new worker process, allowing you to distribute workload across multiple CPU cores: 8
 ```javascript
 const cluster = require('node:cluster');
 const express = require('express')
