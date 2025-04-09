@@ -80,6 +80,12 @@ app.get("/", (req, res) =>
   stream.on ("data", (chunk) => res.write (chunk)) :              // when data comes write to response in chunk 
   stream. on ("end",() => res.end ()) }):   // stream ends stop the response
 ```
+## Buffer
+- if Roler coster has size 30 and
+- lets say - 100 people arrived it send 30 and 70 waiting in buffer
+- lets say - 1 people arrived but buffer can't send its waiting for 29 people to send
+- Buffer does has control of data to be arrived bu it controls the data to be send or put it in buffer.
+
 ### Cluster  works on round robin Algo 1-1,2-2
 - clusters of Node.js processes can be used to run multiple instances of Node.js that can distribute workloads among their application threads
 - What is cluster - when resource is fully occupied we use cluster
