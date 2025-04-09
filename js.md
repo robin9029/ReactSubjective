@@ -742,7 +742,7 @@ emojis.slice(2,4,5)
 
 ### 28 Convert Number to Array and find sum in single digit 
 - number =5431 = 5+4+3+1 =13 = 1+3 = 4
-  ```
+```
 function convertSingleDigit(n){
     //let str = `${n}`.  // convert to string  
     let arr = [...`${n}`].map(Number). // convert to array 
@@ -772,7 +772,8 @@ function convertSingleDigit(n){
         return console.log(sum)
     }
     }
-convertSingleDigit(5431)```
+convertSingleDigit(5431)
+```
 ### 29 output
 ```
 function fun1(){
@@ -816,7 +817,8 @@ for (const element of arr){
         count[element] =1;
     }
 }
-console.log(count)```
+console.log(count)
+```
 
 - { '1': 3, '2': 1, '3': 1, '4': 1 }
 
@@ -833,13 +835,14 @@ for(const [ele,count1] of Object.entries(count)){
 console.log(maxElement) 
 ```
 - OR
+  
 ```
-  let arr= [1,2,2,1,2,3,1]
-undefined
+let arr= [1,2,2,1,2,3,1]
 let count = {}
 for (let i of arr) {
     count[i] ? count[i] += 1 : count[i]= 1
-}```
+}
+```
 ### 31
 ```
 var b = b+1
