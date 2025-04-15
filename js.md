@@ -1316,6 +1316,7 @@ async function asyncTask() {
 ![Screenshot 2025-02-23 at 10 09 33 AM](https://github.com/user-attachments/assets/ebec0e86-788d-41d6-a34d-a50c7774607d)
 
 ### 53  how to inherit car.engine inside bus 
+- what are different methods to create object
 ```
 let car = {
   engine: true
@@ -1338,3 +1339,51 @@ let bus = Object.assign({}, car, color:'red')
 console.log(bus.engine)   // true 
 console.log(bus.color)    // red
 ```
+### 54 memory leakage ?
+```javascript
+function createLeak() {
+	let largeArray = new Array(1000000).fill("leak");
+	return function() {
+		console.log(largeArray.length)
+	}
+}
+ 
+let leakyFunction = createLeak();
+```
+- is this leaking ? - yes , don't call multiple time , call once and store somewhere or make it null
+- if yes how to resolve it  ? closure just `leakyFunction=null`
+- what type of leakage is it ? `memory leak`
+
+### 55 can we push multiple item at a time ? Yes
+```javascript
+let arr = [1,2,3,4,5];
+arr.push(6, null);
+console.log(arr)
+```
+### 56 Write a function to deeply flatten a nested object into an array of values.
+- Input: ( a: 1, b: ( c: 2, d: [3, 4])}
+- Output: [1, 2, 3, 4]
+```javascript
+function extractValues(input) {
+  const output = [];
+
+  function traverse(obj) {
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        const value = obj[key];
+        if (typeof value === 'number') {
+          output.push(value);
+        } else if (Array.isArray(value)) {
+          value.forEach(item => {
+            if (typeof item === 'number') {
+              output.push(item);
+            }
+          });
+        } else if (typeof value === 'object' && value !== null) {
+          traverse(value);
+        }}}}
+
+  traverse(input);
+  return output;
+}
+```  
