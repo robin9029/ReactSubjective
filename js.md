@@ -1386,4 +1386,79 @@ function extractValues(input) {
   traverse(input);
   return output;
 }
-```  
+```
+### 57 Output
+```javascript
+let obj1 = {
+    name: "perficient",
+    age: 25,
+    details: {
+        location: "Nagpur"
+    }
+}
+ let obj2 = obj1   //1 true
+//let obj2 = {...obj1}  //2 false
+ 
+console.log(obj1 === obj2)
+obj2.details.location = "Chennai"
+console.log(obj1) // chennai changes for both
+```
+### 58 write code to display name of student having higher score after sum
+```javascript
+let student= [{'name': 'hello' ,'score': [1,2,3]},
+                {'name': 'hello1' ,'score': [4,5,6]},
+                {'name': 'hello2' ,'score': [7,8,9]}]
+let max=0
+let name=''
+let totalScore =0
+ 
+student.map((data)=>{ 
+   totalScore =     data.score.reduce ((a,b)=>a+b)
+  !max ? max=totalScore : max
+  if(max<totalScore)
+  { 
+      max= totalScore;
+       name= data.name;
+  }
+}
+    )
+console.log('name: ' , name,'totalScoreMax: ‘,max )
+```
+### 59 array rotation & take number of rotation from user 
+```
+var arr = [9,1,6,2,5]
+// rotation [1,6,2,5,9]  
+//1 rotation [1,6,2,5,9]
+//2 rotation [6,2,5,9,1]
+```
+```javascript
+var arr = [9, 1, 6, 2, 5];
+
+function ArrRotation(noOfRotation, arr) {
+  let arrLength = arr.length;
+  // Effective number of rotations to avoid unnecessary full cycles
+  noOfRotation = noOfRotation % arrLength;
+
+  for (let i = 0; i < noOfRotation; i++) {
+    let temp = arr[0]; // Store the first element
+    for (let j = 0; j < arrLength - 1; j++) {
+      arr[j] = arr[j + 1]; // Shift elements to the left
+    }
+    arr[arrLength - 1] = temp; // Place the stored first element at the end
+  }
+  return arr;
+}
+
+console.log(ArrRotation(1, [9, 1, 6, 2, 5]));   // Output: [1, 6, 2, 5, 9]
+console.log(ArrRotation(2, [9, 1, 6, 2, 5]));   // Output: [6, 2, 5, 9, 1]
+console.log(ArrRotation(4, [9, 1, 6, 2, 5]));   // Output: [5, 9, 1, 6, 2]
+console.log(ArrRotation(5, [9, 1, 6, 2, 5]));   // Output: [9, 1, 6, 2, 5] (no change after full rotation)
+console.log(ArrRotation(7, [9, 1, 6, 2, 5]));   // Output: [6, 2, 5, 9, 1] (equivalent to 2 rotations)
+```
+### 60 Can a function variable be hoisted ? No
+```javascript
+console.log(fun()) //error 
+var fun = function (){ console.log()}
+```
+
+
