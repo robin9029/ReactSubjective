@@ -26,8 +26,45 @@ suppose you have same styles need to be implemented inside ordered list, you can
       </aside>
 ```
 ### border makes solid border 
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
+
+```html
+<style>
+p {
+  border-top: 5px solid Black;
+  border-bottom:5px solid black;
+  padding: 20px
 }
+</style>
+```
+<img width="702" alt="Screenshot 2025-05-07 at 11 09 40 PM" src="https://github.com/user-attachments/assets/2f390785-e2dd-4ec9-b6fe-4cc4a03dbac3" />
+
+### psudo class
+
+```html
+/* unvisited link */
+a:link
+
+/* visited link */
+a:visited 
+
+/* mouse over link */
+a:hover 
+/* selected link */
+a:active 
+```
+```html
+select only List item first child 
+li:first-child {  
+  font-weight: bold;
+}
+
+
+select only List item last child 
+li:last-child {
+  font-style: italic;
+}
+
+li:nth-child(odd) {
+  /* color: red; */
+}
+```
