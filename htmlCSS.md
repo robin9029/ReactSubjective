@@ -68,3 +68,10 @@ li:nth-child(odd) {
   /* color: red; */
 }
 ```
+###  CONFLICTING SELECTORS AND DECLARATIONS : specificity 
+- if id, class and tag selector comes for <p> , how CSS applied 
+![Screenshot 2025-05-08 at 12 56 37 AM](https://github.com/user-attachments/assets/4dc1f2cd-ed34-44bc-bd85-2df6db31939a)
+
+![Screenshot 2025-05-08 at 12 56 47 AM](https://github.com/user-attachments/assets/04348008-60a4-47c4-aa40-50be47de63b6)
+- if <p class = 'first second  Last'>
+  - Last will be applied
