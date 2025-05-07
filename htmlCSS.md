@@ -2,10 +2,10 @@
 ![Screenshot 2025-05-07 at 10 51 37 PM](https://github.com/user-attachments/assets/63db02d8-4c9a-4790-8a25-1cdaa1dc811c)
 
 ## Class and ID Selectors ?
-class- use .DOT selector , can be have same name multiple time 
-ID - use # selector, can't be have same name multiple time  
+- class- use .DOT selector , can be have same name multiple time 
+- ID - use # selector, can't be have same name multiple time  
 
-suppose you have same styles need to be implemented inside ordered list, you can mention same class name mulitple times 
+- suppose you have same styles need to be implemented inside ordered list, you can mention same class name mulitple times 
 ```html
 <aside>
         <h4>Related posts</h4>
