@@ -74,4 +74,4 @@ li:nth-child(odd) {
 
 ![Screenshot 2025-05-08 at 12 56 47 AM](https://github.com/user-attachments/assets/04348008-60a4-47c4-aa40-50be47de63b6)
 - if `<p class = 'first second  Last'>`
-  - Last will be applied
+  - Class = `Last` CSS will be applied
