@@ -75,3 +75,26 @@ li:nth-child(odd) {
 ![Screenshot 2025-05-08 at 12 56 47 AM](https://github.com/user-attachments/assets/04348008-60a4-47c4-aa40-50be47de63b6)
 - if `<p class = 'first second  Last'>`
   - Class = `Last` CSS will be applied
+ 
+### BOX models 
+![Screenshot 2025-05-12 at 10 34 58 PM](https://github.com/user-attachments/assets/71ebfbac-872b-44ed-966e-41a2529e8047)
+- margin: spaces between element
+- padding space inside element or inside box 
+- Box models behaves differently with the Bloxk and inline 
+- for Inline : margin top and bottom does not apply
+
+### Inline-Block
+![Screenshot 2025-05-12 at 10 36 09 PM](https://github.com/user-attachments/assets/8edb85bd-9738-4071-b0b5-74f7b602ac02)
+
+### Position - Relative vs absolute
+- absolute: is fixed w.r.t parent conatiner & also you have to mention parent postion as relative
+- Relative : is relative to view port or visible screen 
+![Screenshot 2025-05-12 at 10 35 46 PM](https://github.com/user-attachments/assets/6940e9eb-d517-4cf1-b18d-abfa2e7cb124)
+
+### FlexBOX
+![Screenshot 2025-05-12 at 10 57 19 PM](https://github.com/user-attachments/assets/50b21935-0f85-4086-9853-891b3ae63e87)
+![Screenshot 2025-05-12 at 10 57 32 PM](https://github.com/user-attachments/assets/f992ece7-5575-4b01-81b5-c729e104ed46)
+
+## Grid 
+![Screenshot 2025-05-12 at 10 57 41 PM](https://github.com/user-attachments/assets/9aaa383c-0150-45d9-9060-2940e0267fb8)![Screenshot 2025-05-12 at 10 57 49 PM](https://github.com/user-attachments/assets/a01b79a4-b63f-44cf-ad08-814840abb8f8)
+
