@@ -500,10 +500,51 @@ Eg MakemYtrip
 1 Bundle- Logical bundle - has all Hotel  JS
 1 Bundle- Logical bundle - has all Train  JS
 1 Bundle- Logical bundle - has all BUS  JS
-
+```
+```
 Const Hotel= lazy(()=>import(‘ ../Hotel’))
 This will create separate Logical bundle - has all Hotel  JS in DIS folder once you click on hotel
 ```
+- Lazy loding : Route based 
+```javascript
+import { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+const Login = lazy(() => import('./Login'));
+const Dashboard = lazy(() => import('./Dashboard'));
+
+const App = () => (
+  <Router>
+    <Suspense>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/about" element={<Dashboard />} />
+      </Routes>
+    </Suspense>
+  </Router>
+);
+```
+- Code Splitting : webpack.config.js supports code splitting 
+```javascript
+   module.exports = {
+     optimization: {
+       splitChunks: {
+         chunks: 'all', // or 'async', 'initial'
+         cacheGroups: {
+           vendor: {
+             test: /[\\/]node_modules[\\/]/,
+             name: 'vendor',
+             chunks: 'all',
+           },
+         },
+       },
+     },
+   };
+```
+```link
+https://www.linkedin.com/pulse/optimizing-react-performance-lazy-loading-code-splitting-alex-lomia/
+```
+
 ### 4)Suspence 
 ```
 Once you click on Hotel this code is not available 
