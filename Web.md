@@ -1,4 +1,6 @@
 # UI Scalable Design Patterns in JavaScript help make your UI codebase
+https://bradfrost.com/blog/post/atomic-design-and-storybook/
+
 Sure! UI Scalable Design Patterns in JavaScript help make your UI codebase maintainable, extensible, and efficient as your project grows. These patterns help organize code, manage state, and improve performance.
 
 Here are some common scalable UI design patterns and how to implement them in a UI project (for example, using React, which is popular for building UIs with JavaScript):
