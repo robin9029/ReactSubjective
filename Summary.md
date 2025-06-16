@@ -774,4 +774,111 @@ call in your component
 const Home = () => {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");}
 ```
-### Q Rendring 
+### Q7 Rendring 
+
+a) rendering bloackage issue in react
+In React, rendering blockage typically refers to situations where the main thread is blocked,
+| Cause                              | Description                                                   |
+| ---------------------------------- | ------------------------------------------------------------- |
+| 🔄 Heavy computations              | Complex loops or operations in render or lifecycle methods    |
+| ⛓️ Synchronous API calls           | Blocking the thread using synchronous logic                   |
+| 🧱 Large DOM tree rendering        | Too many elements rendered at once                            |
+| 🔁 Too many re-renders             | Unoptimized state or props updates causing repeated rendering |
+| 🧠 Unmemoized components/functions | Recreating expensive components or values unnecessarily       |
+
+- solution
+  	-- Use useMemo and useCallback (To memoize expensive calculations or functions)
+  	-- Use Lazy Loading for Components(Split large UI into smaller chunks)
+  	-- Debounce Expensive Updates
+```javascript
+  const debouncedSearch = useCallback(debounce(handleSearch, 300), []);
+```
+
+### Q7.1 
+```javascript
+import "./styles.css";
+import { useState, useEffect } from "react";
+
+export default function App() {
+  // Load count from localStorage if exists, else default to 0
+  const [count, setCount] = useState(() => {
+    const storedCount = localStorage.getItem("newCount");
+    return storedCount ? parseInt(storedCount, 10) : 0;
+  });
+
+  useEffect(() => {
+    // Save current count to localStorage
+    localStorage.setItem("newCount", count);
+    console.log("Inside useEffect: ", count);
+
+    return () => {
+      console.log("Cleanup: unmounting or before next effect - ", count);
+    };
+  }, [count]);
+
+  console.log("Outside useEffect (render):", count);
+
+  const IncrementClickHandler = () => {
+    if (count !== 10) {
+      setCount((prevCount) => prevCount + 1);
+    }
+  };
+
+  const DecrementClickHandler = () => {
+    if (count !== 0) {
+      setCount((prevCount) => prevCount - 1);
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <div>
+        <label htmlFor="Increment"> Increment </label>
+        <button onClick={IncrementClickHandler}>Increment Counter</button>
+        <br />
+        <label htmlFor="Decrement"> Decrement </label>
+        <button onClick={DecrementClickHandler}>Decrement Counter</button>
+        <br />
+        <label htmlFor="Counter"> Counter: {count} </label>
+      </div>
+    </div>
+  );
+}
+```
+🖥️ UI Output (Rendered Page)
+```css
+Hello CodeSandbox
+Start editing to see some magic happen!
+
+[Increment Counter]   ← button
+[Decrement Counter]   ← button
+
+Counter: 0            ← value that updates on clicks
+```
+
+🔹 On First Load (count is 0 or value from localStorage)
+```
+Outside useEffect (render): 0
+Inside useEffect: 0
+```
+🔹 After Clicking “Increment Counter” (count becomes 1)
+```
+Outside useEffect (render): 1
+Cleanup: unmounting or before next effect - 0
+Inside useEffect: 1
+```
+🔹 After Clicking Again (count becomes 2)
+```
+Outside useEffect (render): 2
+Cleanup: unmounting or before next effect - 1
+Inside useEffect: 2
+And so on, up to count = 10.
+```
+🔹 After Clicking “Decrement Counter” (e.g., count goes from 2 → 1)
+```
+Outside useEffect (render): 1
+Cleanup: unmounting or before next effect - 2
+Inside useEffect: 1
+```
