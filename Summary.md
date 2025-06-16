@@ -361,7 +361,7 @@ resId=251194
 & Doesn’t refresh 
 ## Q: routing with example 
 
-```
+```javascript
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const App = () => {
@@ -578,7 +578,7 @@ Compatibility between different javascript
 # EP-N Hooks: 
 ### Q1. useContext ?  many nested components. The component at the top and bottom of the stack need access to the state.
 - It Solve  need to pass the state as "props" through each nested component ` "prop drilling".`
-```
+```javascript
 import { useState, createContext, useContext } from "react";
 const UserContext = createContext();
 
@@ -621,7 +621,7 @@ function Component5() {
 - Does Not Cause Re-renders, can be used for storing previous state value 
 - Tracking State Changes
 - Accessing DOM Elements directly - focus
-```
+```javascript
 import React, { useRef, useEffect } from "react";
 
 function MyComponent() {
@@ -647,7 +647,7 @@ function MyComponent() {
 export default MyComponent;
 
 ```
-```
+```javascript
 function App() {
   const inputElement = useRef();
 
@@ -661,7 +661,7 @@ function App() {
 
 ### Q3.useCallback- eg. dynamic filed addition with other operation 
 -useMemo returns a memoized value and useCallback returns a memoized function.
-```
+```javascript
 import { useState, useCallback } from "react";
 import Todos from "./Todos";
 
@@ -688,7 +688,7 @@ const App = () => {
 };
 ```
 
-```
+```javascript
 //Todo.js
 import { memo } from "react";
 
@@ -708,7 +708,7 @@ const Todos = ({ todos, addTodo }) => {
 export default memo(Todos)
 ```
 ### Q4. useMemo
-```
+```javascript
 import { useState, useMemo } from "react";
 
 const App = () => {
@@ -728,7 +728,7 @@ const App = () => {
   );
 };
 ```
-```
+```javascript
 const expensiveCalculation = (num) => {
   console.log("Calculating...");
   for (let i = 0; i < 1000000000; i++) {
@@ -738,7 +738,7 @@ const expensiveCalculation = (num) => {
 };
 ```
 ### Q5. customFetch: component logic that needs to be used by multiple components
-```
+```javascript
 import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
@@ -755,9 +755,8 @@ const useFetch = (url) => {
 
 export default useFetch;
 ```
-```
+```javascript
 call in your component
 const Home = () => {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");}
-```
 ```
