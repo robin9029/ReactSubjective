@@ -545,6 +545,20 @@ const App = () => (
 https://www.linkedin.com/pulse/optimizing-react-performance-lazy-loading-code-splitting-alex-lomia/
 ```
 
+
+| Lazy Loading                                         | Eager Loading                                               |
+|------------------------------------------------------|-------------------------------------------------------------|
+| Data is loaded only when accessed.                   | Data is loaded upfront with the initial request.            |
+| Faster initial load.                                 | Slower initial load.                                        |
+| Uses memory only for accessed data.                  | Higher memory usage due to fetching all data.               |
+| May result in multiple queries.                      | Typically fewer queries.                                    |
+| Requires more complex code for deferred loading.     | Simpler code as all data is available upfront.              |
+| Uses less bandwidth initially.                       | Can use more bandwidth if fetching unnecessary data.        |
+| Applications with conditional data fetching.         | Applications where all data is needed upfront.              |
+
+
+
+
 ### 4)Suspence 
 ```
 Once you click on Hotel this code is not available 
@@ -760,3 +774,4 @@ call in your component
 const Home = () => {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");}
 ```
+### Q Rendring 
