@@ -1460,5 +1460,46 @@ console.log(ArrRotation(7, [9, 1, 6, 2, 5]));   // Output: [6, 2, 5, 9, 1] (equi
 console.log(fun()) //error 
 var fun = function (){ console.log()}
 ```
+### 61 write a simple Callback and covert into promises 
+#### callback 
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    const data = { id: 1, name: "John" };
+    callback(null, data); // first param is error, second is data
+  }, 1000);
+}
+
+// Usage
+fetchData((err, result) => {
+  if (err) {
+    console.error("Error:", err);
+  } else {
+    console.log("Data received:", result);
+  }
+});
+// callback = (err, result) => {if (err) {console.error("Error:", err);} else {console.log("Data received:", result);}}
+```
+#### promise 
+```javascript
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const data = { id: 1, name: "John" };
+      resolve(data); // or reject("Some error") if there's an error
+    }, 1000);
+  });
+}
+
+// Usage
+fetchData()
+  .then(result => {
+    console.log("Data received:", result);
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+```
+
 
 
