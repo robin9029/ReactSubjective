@@ -956,3 +956,30 @@ Outside useEffect (render): 1
 Cleanup: unmounting or before next effect - 2
 Inside useEffect: 1
 ```
+## Q what is virutalization in react
+- technique used to efficiently render large lists or tables by only displaying the items currently visible on the screen
+	- Only visible items are rendered – The browser avoids unnecessary DOM updates.
+	- Efficient scrolling – Items outside the viewport are replaced dynamically.
+	- Improved performance – Reduces lag and enhances user experience.
+- Another lightweight alternative is react-window 
+```javascript
+import { List } from "react-virtualized";
+
+const rowRenderer = ({ index, key, style }) => (
+  <div key={key} style={style}>
+    Item {index}
+  </div>
+);
+
+const VirtualizedList = () => (
+  <List
+    width={300}
+    height={400}
+    rowHeight={50}
+    rowCount={1000}
+    rowRenderer={rowRenderer}
+  />
+);
+
+export default VirtualizedList;
+```
