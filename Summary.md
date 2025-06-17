@@ -350,7 +350,81 @@ const ResturantMenu = () => {
 http://localhost:1234/resturants/251194
 const {resId} =useParams()
 resId=251194
-```  
+```
+## Q:  protected routing vs dyanamic routing and nested routing with example in lattest react router dom a
+```javascript
+import { createBrowserRouter, RouterProvider, Outlet, Navigate, useParams, Link, NavLink, useNavigate } from "react-router-dom";
+
+const ProtectedRoute = ({ children, isAuthenticated }) => {
+  return isAuthenticated ? children : <Navigate to="/login" />;
+};
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <nav>
+        <NavLink to="/dashboard">Go to Dashboard</NavLink>
+      </nav>
+    </div>
+  );
+};
+
+const Dashboard = () => {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <nav>
+        <NavLink to="/dashboard/settings">Settings</NavLink> | 
+        <NavLink to="/dashboard/profile">Profile</NavLink> | 
+        <NavLink to="/dashboard/user/123">User Profile</NavLink>
+      </nav>
+      <Outlet />
+    </div>
+  );
+};
+
+const UserProfile = () => {
+  const { userId } = useParams();
+  return <h1>Welcome, User {userId}</h1>;
+};
+
+const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    // Simulate authentication success
+    const isAuthenticated = true;
+
+    if (isAuthenticated) {
+      navigate("/"); // Redirect to Home after login
+    }
+  };
+
+  return (
+    <div>
+      <h1>Login Page</h1>
+      <button onClick={handleLogin}>Login</button>
+    </div>
+  );
+};
+
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/login", element: <Login /> },
+  { path: "/dashboard", element: <ProtectedRoute isAuthenticated={true}><Dashboard /></ProtectedRoute>, children: [
+    { path: "settings", element: <Settings /> },
+    { path: "profile", element: <Profile /> },
+    { path: "user/:userId", element: <UserProfile /> }, // Dynamic Routing Example
+  ]},
+]);
+
+const App = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default App;
+```
  ## Q: can we use <a href='/'> </a> in place of Link and what is Link ?
 - never use <a> tag for navigating 
 - Not to use since it reload the page which is not required in Place use Link component works similarly as <a>
