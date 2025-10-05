@@ -66,6 +66,125 @@ Fetching data...
 End
 Data received: { ...API Response... } (after some delay)
 ```
+# summary
+## 1. Variables, Scope, and Hoisting (Var, Let, Const)
+
+These questions cover the fundamental differences between `var`, `let`, and `const` and how scope and hoisting work in JavaScript.
+
+| Question(s) | Notes/Related Concepts |
+| :--- | :--- |
+| **Difference between `let`, `const`, and `var`**? (Multiple mentions) | Scope (`var` is function-scoped, `let`/`const` are block-scoped), Hoisting (`var` is hoisted and initialized to `undefined`, `let`/`const` are hoisted but not initialized), Initialization (`const` requires initialization). |
+| Explain `var`, `let`, and `const` with respect to **Hoisting**. | Defines **Hoisting** (memory allocation before execution) and behavior for each keyword. |
+| What is the **scope** difference between `let`, `const`, and `var`? | Notes that `const` has a block scope and its reference is constant (object/array contents can be updated). |
+| What is the output of the provided scoping examples (e.g., `var a = 10; { var a = -10; }` and `let b = a; { let b = -20; }`)? | Tests understanding of **var function scope** vs. **let/const block scope**. |
+| What is the output for `let obj1;` after an assignment using `const`? | Tests understanding of **temporal dead zone (TDZ)** for `let`/`const`. |
+
+---
+
+## 2. Asynchronous JavaScript and the Event Loop
+
+This group focuses on how JavaScript handles time-consuming operations, the **Event Loop**, and the concepts of **Promises** and **Callbacks**.
+
+| Question(s) | Notes/Related Concepts |
+| :--- | :--- |
+| **Event Loop**? What are the **Call Stack**, **Callback Queue**, and **MicroTask Queue**? | Defines the core mechanism for non-blocking operations. |
+| **Precedence in Event Loop**: `setTimeout` vs. `Promise` - which executes first? | Highlights that the **MicroTask Queue** (where Promises run) has priority over the Callback Queue (where `setTimeout` runs). |
+| JavaScript is **Single-threaded or Multi-threaded**? How does it perform **Asynchronous** tasks? | Confirms JS is single-threaded and uses the Event Loop, Promises, and Callbacks for async. |
+| **Promise vs. Callback**? What are the states of a Promise? | Promise is an enhancement over callbacks (avoids "callback hell"). States: **Pending, Fulfilled (Success), Rejected**. |
+| Difference between **`promise` and `async`/`await`**? | `async`/`await` are syntactic sugar built on top of Promises for cleaner asynchronous code. |
+| What is the output of the provided `setTimeout`/`var` hoisting examples? | Checks understanding of how `setTimeout` (async) interacts with **`var`'s function scope** (synchronous loop). |
+| **`setTimeout` vs. `setInterval`**? How do you stop `setInterval`? | Defines one-time vs. repeating execution. Stop with **`clearInterval(id)`**. |
+
+---
+
+## 3. Functions, Closures, and Execution Context
+
+These questions cover function types, their behavior (especially `this`), and the powerful concept of **Closures**.
+
+| Question(s) | Notes/Related Concepts |
+| :--- | :--- |
+| **Closure**? Child function declared inside parent function having access to parent's variables. | Multiple questions asking for a definition, example, and its use case (e.g., **data privacy/hiding**). |
+| **`this` keyword**? How does it behave in a normal function vs. an **arrow function**? | Notes dynamic binding for normal functions and **lexical binding** (parent's `this`) for arrow functions. Also notes strict mode and event context. |
+| **Regular Function vs. Arrow Function**? | Compares `this` binding, hoisting, and syntax. |
+| **Function Currying**? Write a multiply function with currying. | Defines currying as transforming a function with multiple arguments into a series of functions, each taking a single argument. |
+| **Callback function**? Provide an example. | Defines a function passed as an argument to another function, to be executed later. |
+| **Recursive function**? | Defines a function that calls itself, e.g., for calculating a factorial or Fibonacci series. |
+| **Higher-Order Function (HOC)**? | Defines a function that **accepts a function as an argument** or **returns a function** (e.g., `map`, `filter`, `reduce`). |
+| When do we use **`bind` vs. `call`/`apply`**? | Mentions binding a function's `this` context. (`call`/`apply` execute immediately, `bind` returns a new function). |
+
+---
+
+## 4. Array/Object Methods and Data Manipulation
+
+This section covers common array methods, data structure concepts, and utility operations.
+
+| Question(s) | Notes/Related Concepts |
+| :--- | :--- |
+| **`map` vs. `forEach`**? | `map` returns a **new array** with transformed elements; `forEach` returns **`undefined`** and is used for side effects. |
+| **`map` vs. `reduce`**? | `map` for **transformation** (1:1), `reduce` for **aggregation** (many:1, uses accumulator). |
+| `map`, **`filter`**, **`find`**? | `map` (transformation), `filter` (creates a new array of matching elements), `find` (returns the first matching element). |
+| **Spread Operator** (`...`)? **Rest Operator**? | Spread is used to expand iterables (arrays, objects) into their components. Rest collects all remaining function arguments into an array. |
+| **Shallow Copy vs. Deep Copy**? (Multiple mentions) | Shallow copy duplicates the top-level structure (shares references for nested objects). Deep copy duplicates all levels (no shared references). |
+| How to **find the unique data in an array**? | Uses **`new Set()`** or iterative checking (`includes`). |
+| Program to find the **occurrence of array elements** (frequency count). | Shows using a map/object to count frequencies. |
+| How to **reverse a string** or **reverse words in a string**? | Uses `split`, `reverse`, and `join` array methods. |
+| **Optional Chaining** (`?.`)? | Safely access deeply nested object properties without checking for intermediate null/undefined values. |
+| How to **sort an object array** in ascending order? | Requires using the `Array.prototype.sort()` method with a custom comparison function. |
+
+---
+
+## 5. JSON and Object Serialization
+
+These are two specific but critical operations for data exchange.
+
+| Question(s) | Notes/Related Concepts |
+| :--- | :--- |
+| To convert **JSON data/String --> JavaScript object**? | Use the built-in **`JSON.parse()`** function. |
+| To convert **JavaScript objects --> JSON format/Data (JSON String)**? | Use the built-in **`JSON.stringify()`** function. |
+
+---
+
+## 6. DOM, Events, and Performance
+
+These cover how JavaScript interacts with the HTML document and methods for optimization.
+
+| Question(s) | Notes/Related Concepts |
+| :--- | :--- |
+| What is **Event Bubbling**? | Event triggers on the target element and then propagates **up** through its ancestors in the DOM tree. Use `event.stopPropagation()` to stop it. |
+| **Event Delegation**? | Attaching a single event listener to a parent element instead of multiple listeners to child elements. |
+| **Virtual DOM**? | An abstraction of the HTML DOM used by frameworks (like React) for performance optimization by batching updates. |
+| How to prevent **re-render** for every change in a textbook? | Use **Debouncing** (delay execution until after a period of inactivity) or **Throttling** (limit execution to once every set time interval). |
+| Difference between **Local and Session Storage**? | Both are client-side storage, but **Session Storage** clears when the session/tab closes, while **Local Storage** persists until explicitly cleared. |
+| **Responsive** design in JS/CSS? | Using media queries. |
+
+---
+
+## 7. ES6+ Features and Modern JavaScript
+
+Questions about features introduced in modern standards like ECMAScript 2015 (ES6) and later.
+
+| Question(s) | Notes/Related Concepts |
+| :--- | :--- |
+| What are some **ES6 features**? | `let`, `const`, arrow functions, spread/rest operator, template literals, Promises. |
+| What is **ECMAScript (ES)**? | The **standard** (specification) for scripting languages, with JavaScript being the most popular implementation. |
+| **Classes in JavaScript** (ES6)? | Syntactic sugar over JavaScript's prototype-based inheritance. Discusses **constructor function** and `new` keyword. |
+| What are the **properties of a class**? | Instance fields, static properties/methods, instance methods, arrow functions as properties. |
+
+---
+
+## 8. Miscellaneous Core Concepts
+
+These cover other fundamental concepts that don't fit neatly into the above categories.
+
+| Question(s) | Notes/Related Concepts |
+| :--- | :--- |
+| **Prototypes**? How does JavaScript look up properties? | All objects have a prototype, forming a chain that ends with `null`. The JS engine looks for properties up this **prototype chain**. |
+| **`==` vs. `===`**? | `==` checks **value** (allows type coercion). `===` checks both **value and type** (strict equality). |
+| **`null == undefined`**? | Is **`true`** (due to type coercion), but `null === undefined` is **`false`**. |
+| What is a **pure function**? | A function that: 1. Returns the same output for the same input (deterministic). 2. Has no side effects (doesn't modify external state). |
+| **Memory Leakage**? How to prevent it? | Unintended retention of memory by objects that are no longer needed. Prevention often involves properly nullifying references (especially with Closures). |
+| **JavaScript Engine**? (e.g., V8, SpiderMonkey) | Defines the process: Code $\rightarrow$ Tokenizing $\rightarrow$ Interpreting $\rightarrow$ JIT (Just-In-Time) Compiling $\rightarrow$ Optimization and Garbage Collection. |
+| **OOPS Concepts** in JS? | **Polymorphism** (different forms), **Abstraction** (hiding details), **Encapsulation** (bundling data and methods), **Inheritance** (parent features in child). |
 
 # frequntly asked
 ```
